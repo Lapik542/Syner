@@ -1,0 +1,384 @@
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Black.eot');
+    src: local('Crique Grotesk Display Black'), local('CriqueGroteskDisplay-Black'),
+        url('CriqueGroteskDisplay-Black.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Black.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Black.woff') format('woff'),
+        url('CriqueGroteskDisplay-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-ThinItalic.eot');
+    src: local('Crique Grotesk Thin Italic'), local('CriqueGrotesk-ThinItalic'),
+        url('CriqueGrotesk-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-ThinItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-ThinItalic.woff') format('woff'),
+        url('CriqueGrotesk-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-HeavyIt.eot');
+    src: local('Crique Grotesk Display Heavy Italic'), local('CriqueGroteskDisplay-HeavyIt'),
+        url('CriqueGroteskDisplay-HeavyIt.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-HeavyIt.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-HeavyIt.woff') format('woff'),
+        url('CriqueGroteskDisplay-HeavyIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk.eot');
+    src: local('Crique Grotesk'), local('CriqueGrotesk'),
+        url('CriqueGrotesk.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk.woff2') format('woff2'),
+        url('CriqueGrotesk.woff') format('woff'),
+        url('CriqueGrotesk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-BlackItalic.eot');
+    src: local('Crique Grotesk Black Italic'), local('CriqueGrotesk-BlackItalic'),
+        url('CriqueGrotesk-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-BlackItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-BlackItalic.woff') format('woff'),
+        url('CriqueGrotesk-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay.eot');
+    src: local('Crique Grotesk Display'), local('CriqueGroteskDisplay'),
+        url('CriqueGroteskDisplay.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay.woff2') format('woff2'),
+        url('CriqueGroteskDisplay.woff') format('woff'),
+        url('CriqueGroteskDisplay.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Medium.eot');
+    src: local('Crique Grotesk Display Medium'), local('CriqueGroteskDisplay-Medium'),
+        url('CriqueGroteskDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Medium.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Medium.woff') format('woff'),
+        url('CriqueGroteskDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display UlLight';
+    src: url('CriqueGroteskDisplay-UlLight.eot');
+    src: local('Crique Grotesk Display UlLight'), local('CriqueGroteskDisplay-UlLight'),
+        url('CriqueGroteskDisplay-UlLight.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-UlLight.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-UlLight.woff') format('woff'),
+        url('CriqueGroteskDisplay-UlLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Light.eot');
+    src: local('Crique Grotesk Display Light'), local('CriqueGroteskDisplay-Light'),
+        url('CriqueGroteskDisplay-Light.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Light.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Light.woff') format('woff'),
+        url('CriqueGroteskDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Bold.eot');
+    src: local('Crique Grotesk Display Bold'), local('CriqueGroteskDisplay-Bold'),
+        url('CriqueGroteskDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Bold.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Bold.woff') format('woff'),
+        url('CriqueGroteskDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Heavy.eot');
+    src: local('Crique Grotesk Display Heavy'), local('CriqueGroteskDisplay-Heavy'),
+        url('CriqueGroteskDisplay-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Heavy.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Heavy.woff') format('woff'),
+        url('CriqueGroteskDisplay-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Italic.eot');
+    src: local('Crique Grotesk Display Italic'), local('CriqueGroteskDisplay-Italic'),
+        url('CriqueGroteskDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Italic.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Italic.woff') format('woff'),
+        url('CriqueGroteskDisplay-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-ThinItalic.eot');
+    src: local('Crique Grotesk Display Thin Italic'), local('CriqueGroteskDisplay-ThinItalic'),
+        url('CriqueGroteskDisplay-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-ThinItalic.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-ThinItalic.woff') format('woff'),
+        url('CriqueGroteskDisplay-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-LightIt.eot');
+    src: local('Crique Grotesk Display Light Italic'), local('CriqueGroteskDisplay-LightIt'),
+        url('CriqueGroteskDisplay-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-LightIt.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-LightIt.woff') format('woff'),
+        url('CriqueGroteskDisplay-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Heavy.eot');
+    src: local('Crique Grotesk Heavy'), local('CriqueGrotesk-Heavy'),
+        url('CriqueGrotesk-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Heavy.woff2') format('woff2'),
+        url('CriqueGrotesk-Heavy.woff') format('woff'),
+        url('CriqueGrotesk-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Italic.eot');
+    src: local('Crique Grotesk Italic'), local('CriqueGrotesk-Italic'),
+        url('CriqueGrotesk-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Italic.woff2') format('woff2'),
+        url('CriqueGrotesk-Italic.woff') format('woff'),
+        url('CriqueGrotesk-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-MediumItalic.eot');
+    src: local('Crique Grotesk Medium Italic'), local('CriqueGrotesk-MediumItalic'),
+        url('CriqueGrotesk-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-MediumItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-MediumItalic.woff') format('woff'),
+        url('CriqueGrotesk-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-LightItalic.eot');
+    src: local('Crique Grotesk Light Italic'), local('CriqueGrotesk-LightItalic'),
+        url('CriqueGrotesk-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-LightItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-LightItalic.woff') format('woff'),
+        url('CriqueGrotesk-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Black.eot');
+    src: local('Crique Grotesk Black'), local('CriqueGrotesk-Black'),
+        url('CriqueGrotesk-Black.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Black.woff2') format('woff2'),
+        url('CriqueGrotesk-Black.woff') format('woff'),
+        url('CriqueGrotesk-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk UlLight';
+    src: url('CriqueGrotesk-UltraLightItalic.eot');
+    src: local('Crique Grotesk UltraLight Italic'), local('CriqueGrotesk-UltraLightItalic'),
+        url('CriqueGrotesk-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-UltraLightItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-UltraLightItalic.woff') format('woff'),
+        url('CriqueGrotesk-UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Thin.eot');
+    src: local('Crique Grotesk Thin'), local('CriqueGrotesk-Thin'),
+        url('CriqueGrotesk-Thin.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Thin.woff2') format('woff2'),
+        url('CriqueGrotesk-Thin.woff') format('woff'),
+        url('CriqueGrotesk-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-BoldItalic.eot');
+    src: local('Crique Grotesk Bold Italic'), local('CriqueGrotesk-BoldItalic'),
+        url('CriqueGrotesk-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-BoldItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-BoldItalic.woff') format('woff'),
+        url('CriqueGrotesk-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Light.eot');
+    src: local('Crique Grotesk Light'), local('CriqueGrotesk-Light'),
+        url('CriqueGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Light.woff2') format('woff2'),
+        url('CriqueGrotesk-Light.woff') format('woff'),
+        url('CriqueGrotesk-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-HeavyItalic.eot');
+    src: local('Crique Grotesk Heavy Italic'), local('CriqueGrotesk-HeavyItalic'),
+        url('CriqueGrotesk-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-HeavyItalic.woff2') format('woff2'),
+        url('CriqueGrotesk-HeavyItalic.woff') format('woff'),
+        url('CriqueGrotesk-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-MediumIt.eot');
+    src: local('Crique Grotesk Display Medium Italic'), local('CriqueGroteskDisplay-MediumIt'),
+        url('CriqueGroteskDisplay-MediumIt.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-MediumIt.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-MediumIt.woff') format('woff'),
+        url('CriqueGroteskDisplay-MediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-BoldItalic.eot');
+    src: local('Crique Grotesk Display Bold Italic'), local('CriqueGroteskDisplay-BoldItalic'),
+        url('CriqueGroteskDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-BoldItalic.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-BoldItalic.woff') format('woff'),
+        url('CriqueGroteskDisplay-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk UlLight';
+    src: url('CriqueGrotesk-UltraLight.eot');
+    src: local('Crique Grotesk UltraLight'), local('CriqueGrotesk-UltraLight'),
+        url('CriqueGrotesk-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-UltraLight.woff2') format('woff2'),
+        url('CriqueGrotesk-UltraLight.woff') format('woff'),
+        url('CriqueGrotesk-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-Thin.eot');
+    src: local('Crique Grotesk Display Thin'), local('CriqueGroteskDisplay-Thin'),
+        url('CriqueGroteskDisplay-Thin.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-Thin.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-Thin.woff') format('woff'),
+        url('CriqueGroteskDisplay-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Bold.eot');
+    src: local('Crique Grotesk Bold'), local('CriqueGrotesk-Bold'),
+        url('CriqueGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Bold.woff2') format('woff2'),
+        url('CriqueGrotesk-Bold.woff') format('woff'),
+        url('CriqueGrotesk-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk';
+    src: url('CriqueGrotesk-Medium.eot');
+    src: local('Crique Grotesk Medium'), local('CriqueGrotesk-Medium'),
+        url('CriqueGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGrotesk-Medium.woff2') format('woff2'),
+        url('CriqueGrotesk-Medium.woff') format('woff'),
+        url('CriqueGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display';
+    src: url('CriqueGroteskDisplay-BlackIt.eot');
+    src: local('Crique Grotesk Display Black Italic'), local('CriqueGroteskDisplay-BlackIt'),
+        url('CriqueGroteskDisplay-BlackIt.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-BlackIt.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-BlackIt.woff') format('woff'),
+        url('CriqueGroteskDisplay-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Crique Grotesk Display UlLight';
+    src: url('CriqueGroteskDisplay-UlLightIt.eot');
+    src: local('Crique Grotesk Display UlLight It'), local('CriqueGroteskDisplay-UlLightIt'),
+        url('CriqueGroteskDisplay-UlLightIt.eot?#iefix') format('embedded-opentype'),
+        url('CriqueGroteskDisplay-UlLightIt.woff2') format('woff2'),
+        url('CriqueGroteskDisplay-UlLightIt.woff') format('woff'),
+        url('CriqueGroteskDisplay-UlLightIt.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
