@@ -6,5 +6,8 @@
       <symbol id="icon-arrow" viewBox="0 0 41 32">
         <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3684" d="M24.562 1.684l14.316 14.316M38.877 16l-14.316 14.316M38.877 16h-38.175"></path>
       </symbol>
+      <symbol id="icon-arrow-while" viewBox="0 0 25 32">
+        <path fill="none" stroke="#f5f2ee" style="stroke: var(--color1, #f5f2ee)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.1559" d="M1.71 18.511l10.852 11.046M12.562 29.557l10.852-11.046M12.562 29.557v-29.455"></path>
+      </symbol>
     </defs>
   </svg>

@@ -9,6 +9,7 @@
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 14px;
+    position: fixed;
 }
 
 .nav-list {
@@ -63,6 +64,8 @@ transition: all 0.3s ease;
     width: 100%;
     margin-right: 24px;
     border-top: none;
+    margin-left: 64px;
+    height: 100%;
 }
 
 .main-text-img {
@@ -74,7 +77,7 @@ transition: all 0.3s ease;
 font-family: Nekst;
 font-size: 35px;
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 line-height: 100%; /* 35px */
 text-transform: uppercase;
 
@@ -96,7 +99,7 @@ margin-bottom: 80px;
 font-family: Nekst;
 font-size: 120px;
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 line-height: normal;
 text-transform: uppercase;
 
@@ -109,7 +112,7 @@ margin-left: 24px;
 font-family: Nekst;
 font-size: 120px;
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 line-height: normal;
 text-transform: uppercase;
 
@@ -150,7 +153,7 @@ text-align: center;
 font-family: Nekst;
 font-size: 20px;
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 line-height: normal;
 text-transform: uppercase;
 
@@ -189,4 +192,193 @@ transition: all 0.3s ease;
 
 .icon-arrow {
     stroke: #000;
+}
+
+// SERVICES
+
+.services-section {
+    margin-top: 120px;
+}
+
+.services-title {
+    color: #000;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Nekst;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 264.96px;
+    text-transform: uppercase;
+    margin-left: 28px;
+}
+
+.services-cards-list {
+    display: flex;
+    gap: 44px;
+    justify-content: center;
+}
+
+.services-card{
+    display: flex;
+width: 557px;
+height: 520px;
+padding: 30px 25px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+flex-shrink: 0;
+
+border-radius: 16px;
+background: #0E0E0E;
+}
+
+.title-cards {
+    color: #D4D0C2;
+    font-family: Nekst;
+    font-size: 50.363px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11.622px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.engineering-list {
+    display: flex;
+    gap: 8px;
+}
+
+.engineering-specialty {
+    color: #D4D0C2;
+font-family: Nekst;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+display: flex;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+border-radius: 20px;
+border: 1px solid #D4D0C2;
+}
+
+.cards-img {
+    display: flex;
+    justify-content: center;
+    margin-left: 32px;
+    width: 412.399px;
+    height: 284.901px;
+}
+
+.button-get-started-card {
+    display: flex;
+width: 153px;
+height: 92px;
+padding: 22px 32px;
+justify-content: center;
+align-items: center;
+gap: 30px;
+border-radius: 47px;
+background: #FFF;  
+}
+
+.cards-img-figure {
+    margin-top: 70px;
+}
+
+.button-get-started-card-design {
+    margin-top: 40px;
+    display: flex;
+width: 153px;
+height: 92px;
+padding: 22px 32px;
+justify-content: center;
+align-items: center;
+gap: 30px;
+border-radius: 47px;
+background: #FFF; 
+}
+
+.button-get-started-card-text {
+    display: none;
+    color: #0E0E0E;
+font-family: Nekst;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%;
+text-transform: uppercase;
+transition: all 0.9s ease;
+}
+
+.cards-img-snail {
+    margin-top: 70px;
+}
+
+.snail-btn {
+    margin-top: 44px;
+}
+
+.hover-btn-card {
+    transition: all 0.9s ease;
+}
+
+.hover-btn-card:hover {
+    display: flex;
+width: 446px;
+padding: 22px 32px;
+justify-content: center;
+align-items: center;
+gap: 30px;
+border-radius: 47px;
+background: #FBFF36;
+    & .button-get-started-card-text {
+        display: flex;
+        white-space: nowrap;
+        overflow: hidden;   
+    }
+}
+
+// PORTFOLIO
+
+.portfolio-section {
+    margin-top: 110px;
+    padding: 0 32px;
+}
+
+.portfolio-title {
+    color: #000;
+leading-trim: both;
+text-edge: cap;
+font-family: Nekst;
+font-size: 120px;
+font-style: normal;
+font-weight: 500;
+line-height: 264.96px; /* 220.8% */
+text-transform: uppercase;
+}
+
+.portfolio-cards {
+    display: flex;
+    gap: 44px;
+}
+
+.portfolio-card-phone {
+    display: flex;
+width: 552px;
+height: 517px;
+padding: 35px 60px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 35px;
+flex-shrink: 0;
+
+border-radius: 16px;
+border: 1px solid #000;
 }
