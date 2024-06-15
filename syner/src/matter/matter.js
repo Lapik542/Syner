@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const rect = element.getBoundingClientRect();
 
         const body = Bodies.rectangle(
-            rect.left + rect.width / 2,  // Початкова позиція x
-            rect.top + rect.height / 2,   // Початкова позиція y
+            Math.max(rect.left + rect.width / 6, rect.width / 4),  // Початкова позиція x
+            Math.max(rect.top + rect.height / 6, rect.height / 4),   // Початкова позиція y
             rect.width,
             rect.height,
             {
@@ -63,8 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
         element.style.position = 'absolute';
         function updateElementPosition() {
             const pos = body.position;
-            element.style.left = `${pos.x - rect.width / 2}px`;
-            element.style.top = `${pos.y - rect.height / 2}px`;
+            // Обмежуємо позицію елементів в межах секції .matter-section
+            const maxX = sectionWidth - rect.width / 2;
+            const maxY = sectionHeight - rect.height / 2;
+            element.style.left = `${Math.min(Math.max(pos.x - rect.width / 2, rect.width / 2), maxX)}px`;
+            element.style.top = `${Math.min(Math.max(pos.y - rect.height / 2, rect.height / 2), maxY)}px`;
         }
         Events.on(engine, 'afterUpdate', updateElementPosition);
 
