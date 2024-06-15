@@ -1,6 +1,4 @@
-<script src="./app.components.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
 
 <div class="container"> <!-- CONTAINER -->
 
@@ -80,20 +78,18 @@
     </section>
     <section class="matter-section">
       <div class="matter">
-        <div class="background-1 draggable">web design</div>
-        <div class="background-2 draggable"></div>
-        <div class="background-1 draggable">creativity</div>
-        <div class="background-2 draggable">experience</div>
-        <div class="background-1 draggable"></div>
-        <div class="background-2 draggable">mobile app</div>
-        <div class="background-1 draggable">smm</div>
-        <div class="background-2 draggable"></div>
-        <div class="background-1 draggable">brands</div>
-        <div class="background-2 draggable">front-end</div>
-        <div class="background-1 draggable">animation</div>
-        <div class="background-2 draggable">figma</div>
+        <div class="background-1 draggable" id="body1">web design</div>
+        <div class="background-2 draggable" id="body2">creativity</div>
+        <div class="background-1 draggable" id="body3">experience</div>
+        <div class="background-2 draggable" id="body4">mobile app</div>
+        <div class="background-1 draggable" id="body5">smm</div>
+        <div class="background-2 draggable" id="body6">brands</div>
+        <div class="background-1 draggable" id="body7">front-end</div>
+        <div class="background-2 draggable" id="body8">animation</div>
+        <div class="background-1 draggable" id="body9">figma</div>
+        <canvas id="matterCanvas"></canvas>
       </div>
-    </section>   
+    </section> 
     <section class="portfolio-section">
       <div class="portfolio">
         <h2 class="portfolio-title">portfolio</h2>
@@ -144,7 +140,7 @@
               <p class="footer-get-started-text">get started</p>
               <button class="footer-button-get-started">
                 <svg class="icon-arrow-black" width="92" height="68">
-                  <use xlink:href="assets/icons/icon.svg#icon-arrow-top-right"></use>
+                  <use xlink:href="../assets/icon.svg#icon-arrow-top-right"></use>
                 </svg>
               </button>              
             </div>
