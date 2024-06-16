@@ -1,98 +1,172 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const { Engine, Render, Runner, Bodies, Mouse, MouseConstraint, World, Events } = Matter;
+document.addEventListener('DOMContentLoaded', function() {
+    var Matter = window.Matter,
+        Engine = Matter.Engine,
+        Render = Matter.Render,
+        Runner = Matter.Runner,
+        Body = Matter.Body,
+        Composite = Matter.Composite,
+        Bodies = Matter.Bodies,
+        MouseConstraint = Matter.MouseConstraint,
+        Mouse = Matter.Mouse;
 
-    const sectionWidth = document.querySelector('.matter-section').offsetWidth;
-    const sectionHeight = document.querySelector('.matter-section').offsetHeight;
+    // create engine
+    var engine = Engine.create(),
+        world = engine.world;
 
-    const engine = Engine.create();
-    const render = Render.create({
-        canvas: document.getElementById('matterCanvas'),
+    // Constants for container dimensions
+    var containerWidth = 1758;
+    var containerHeight = 439;
+
+    // get the matter container
+    var matterContainer = document.querySelector('.matter');
+    var matterRect = matterContainer.getBoundingClientRect();
+
+    // create renderer
+    var render = Render.create({
+        element: matterContainer,
         engine: engine,
+        canvas: document.getElementById('matterCanvas'),
         options: {
-            width: sectionWidth,
-            height: sectionHeight,
-            wireframes: false
+            width: containerWidth,
+            height: containerHeight,
+            wireframes: false,
+            background: 'transparent'
         }
     });
 
     Render.run(render);
 
-    const runner = Runner.create();
+    // create runner
+    var runner = Runner.create();
     Runner.run(runner, engine);
 
-    const mouse = Mouse.create(render.canvas);
-    const mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-            stiffness: 0.2,
-            render: {
-                visible: false
-            }
-        }
-    });
+    // create an empty array to store draggable bodies
+    var draggableBodies = [];
 
-    World.add(engine.world, mouseConstraint);
+    // get all draggable elements
+    var draggableElements = Array.from(document.querySelectorAll('.draggable'));
 
-    render.mouse = mouse;
+    // create bodies for each draggable element
+    draggableElements.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        var randomX = Math.random() * (containerWidth - rect.width);
+        var randomY = Math.random() * (containerHeight - rect.height);
 
-    const bodies = [];
-    const elements = document.querySelectorAll('.draggable');
-
-    elements.forEach((element, index) => {
-        const rect = element.getBoundingClientRect();
-
-        const body = Bodies.rectangle(
-            Math.max(rect.left + rect.width / 6, rect.width / 4),  // Початкова позиція x
-            Math.max(rect.top + rect.height / 6, rect.height / 4),   // Початкова позиція y
+        var body = Bodies.rectangle(
+            randomX,
+            randomY,
             rect.width,
             rect.height,
             {
-                restitution: 0.8,
-                frictionAir: 0.1,
+                isStatic: false,
                 render: {
-                    fillStyle: element.classList.contains('background-1') ? '#000' : 'transparent',
+                    fillStyle: el.classList.contains('background-1') ? '#000' : 'transparent',
                     strokeStyle: '#000',
                     lineWidth: 1
                 }
             }
         );
 
-        bodies.push(body);
-        World.add(engine.world, body);
+        // make the element draggable
+        el.style.position = 'absolute';
+        el.style.left = `${randomX}px`;
+        el.style.top = `${randomY}px`;
+        el.style.userSelect = 'none'; // prevent text selection
+        el.style.cursor = 'pointer'; // dragging cursor
 
-        element.style.position = 'absolute';
-        function updateElementPosition() {
-            const pos = body.position;
-            // Обмежуємо позицію елементів в межах секції .matter-section
-            const maxX = sectionWidth - rect.width / 2;
-            const maxY = sectionHeight - rect.height / 2;
-            element.style.left = `${Math.min(Math.max(pos.x - rect.width / 2, rect.width / 2), maxX)}px`;
-            element.style.top = `${Math.min(Math.max(pos.y - rect.height / 2, rect.height / 2), maxY)}px`;
-        }
-        Events.on(engine, 'afterUpdate', updateElementPosition);
-
-        element.addEventListener('mousedown', function(event) {
+        // prevent text selection on mouse down
+        el.addEventListener('mousedown', function(event) {
             event.preventDefault();
-            mouseConstraint.body = body;
-            mouseConstraint.constraint.pointA = { x: event.offsetX, y: event.offsetY };
+            // Set dragging flag to this element
+            el.isDragging = true;
+            // Disable engine gravity while dragging for smoother movement
+            engine.world.gravity.y = 0;
+            // Store initial position offset
+            var rect = el.getBoundingClientRect();
+            el.dragOffsetX = event.clientX - rect.left;
+            el.dragOffsetY = event.clientY - rect.top;
+            // Bring element to front
+            el.style.zIndex = 1000;
         });
 
-        element.addEventListener('mouseup', function(event) {
-            mouseConstraint.body = null;
-            mouseConstraint.constraint.pointA = null;
-        });
-
-        element.addEventListener('mouseleave', function(event) {
-            mouseConstraint.body = null;
-            mouseConstraint.constraint.pointA = null;
-        });
-
-        element.addEventListener('mousemove', function(event) {
-            if (mouseConstraint.body === body) {
-                mouseConstraint.constraint.pointA = { x: event.offsetX, y: event.offsetY };
+        // handle mouse move
+        el.addEventListener('mousemove', function(event) {
+            if (el.isDragging) {
+                var mouseX = event.clientX - matterRect.left;
+                var mouseY = event.clientY - matterRect.top;
+                var newPosition = { x: mouseX - el.dragOffsetX, y: mouseY - el.dragOffsetY };
+                Body.setPosition(body, newPosition);
             }
+        });
+
+        Composite.add(world, body);
+
+        // store the body and element in draggableBodies array
+        draggableBodies.push({ body: body, element: el });
+    });
+
+    // add walls (to contain the elements within the container)
+    var ground = Bodies.rectangle(containerWidth / 2, containerHeight + 30, containerWidth, 60, { isStatic: true });
+    var leftWall = Bodies.rectangle(-30, containerHeight / 2, 60, containerHeight, { isStatic: true });
+    var rightWall = Bodies.rectangle(containerWidth + 30, containerHeight / 2, 60, containerHeight, { isStatic: true });
+    var ceiling = Bodies.rectangle(containerWidth / 2, -30, containerWidth, 60, { isStatic: true });
+
+    Composite.add(world, [ground, leftWall, rightWall, ceiling]);
+
+    // add mouse control
+    var mouse = Mouse.create(render.canvas),
+        mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+    Composite.add(world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+    // update the positions of the div elements
+    Matter.Events.on(engine, 'afterUpdate', function() {
+        draggableBodies.forEach(function(item) {
+            var body = item.body;
+            var el = item.element;
+
+            // Update element position and rotation
+            el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
+            el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
+            el.style.transform = `rotate(${body.angle}rad)`;
         });
     });
 
-    Engine.run(engine);
+    // fit the render viewport to the scene
+    Render.lookAt(render, Composite.allBodies(world));
+
+    // Event listener for mouseup to end dragging
+    document.addEventListener('mouseup', function(event) {
+        // End dragging for all elements
+        draggableBodies.forEach(function(item) {
+            var body = item.body;
+            var el = item.element;
+            
+            if (el.isDragging) {
+                // Restore absolute position
+                setTimeout(function() {
+                    el.style.position = 'absolute';
+                    el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
+                    el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
+                    el.style.zIndex = ''; // Restore z-index
+                    el.isDragging = false;
+                }, 0); // setTimeout with 0 delay to ensure it runs after current event loop
+            }
+        });
+        
+        // Restore engine gravity
+        engine.world.gravity.y = 1;
+    });
+
 });

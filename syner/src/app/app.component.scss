@@ -173,8 +173,7 @@ transition: all 0.3s ease;
 }
 
 .button-get-started:hover {
-    top: 0px;
-    background: #f4f76c;
+    top: 0px; 
 }
 
 .block-phones {
@@ -194,6 +193,68 @@ transition: all 0.3s ease;
 .icon-arrow {
     stroke: #000;
 }
+
+// MATTER
+
+.matter-section {
+    margin-top: 40px;
+    padding: 0 30px;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  .matter {
+    display: flex;
+    width: 100%;
+    height: 440px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    border-radius: 16px;
+    border: 1px solid #000;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden; 
+  }
+  
+  .background-1,
+  .background-2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-weight: 500;
+    width: 237px;
+    height: 60px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  
+  .background-1 {
+    background-color: #000;
+    color: #fbff36;
+  }
+  
+  .background-2 {
+    background-color: transparent;
+    color: #000;
+  }
+
+  .draggable {
+    cursor: pointer;
+    }   
+  
+  canvas {  
+    display: none;
+  }
 
 // SERVICES
 
@@ -243,6 +304,7 @@ background: #0E0E0E;
     line-height: 11.622px;
     text-transform: uppercase;
     margin-bottom: 14px;
+    margin-top: 30px;
 }
 
 .engineering-list {
@@ -257,6 +319,8 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+
+margin-top: 14px;
 
 display: flex;
 padding: 10px;
@@ -274,6 +338,7 @@ border: 1px solid #D4D0C2;
     margin-left: 32px;
     width: 412.399px;
     height: 284.901px;
+    margin-top: -30px;
 }
 
 .button-get-started-card {
@@ -286,10 +351,11 @@ align-items: center;
 gap: 30px;
 border-radius: 47px;
 background: #FFF;  
+margin-top: -12px;
 }
 
 .cards-img-figure {
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .button-get-started-card-design {
@@ -318,7 +384,7 @@ transition: all 0.9s ease;
 }
 
 .cards-img-snail {
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .snail-btn {
@@ -383,62 +449,6 @@ flex-shrink: 0;
 border-radius: 16px;
 border: 1px solid #000;
 }
-
-// MATTER
-
-.matter-section {
-    margin-top: 40px;
-    padding: 0 30px;
-    overflow: hidden;
-    position: relative; 
-  }
-  
-  .matter {
-    display: flex;
-    width: 100%;
-    height: 440px;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    border-radius: 16px;
-    border: 1px solid #000;
-    position: relative;
-    overflow: hidden; 
-  }
-  
-  .background-1,
-  .background-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    cursor: pointer;
-    position: relative;
-    z-index: 100;
-    border-radius: 50px;
-    border: 1px solid #000;
-    font-weight: 500;
-    width: 237px;
-    height: 60px;
-    flex-shrink: 0;
-    text-transform: uppercase;
-  }
-  
-  .background-1 {
-    background-color: #000;
-    color: #fbff36;
-  }
-  
-  .background-2 {
-    background-color: transparent;
-    color: #000;
-  }
-  
-  canvas {
-    display: none;
-  }
 
 //   CONNECT
 
@@ -518,12 +528,22 @@ text-transform: uppercase;
 
 .img-click-block {
     position: relative;
+    overflow: hidden;
     width: 542.036px;
 height: 281px;
 flex-shrink: 0;
 border-radius: 16px;
 border: 1px solid #000;
 mix-blend-mode: darken;
+cursor: pointer;
+}
+
+.img-click-img {
+    transition: transform 0.3s ease;
+}
+
+.img-click-img:hover {
+    transform: scale(1.1);
 }
 
 .img-click-text {
