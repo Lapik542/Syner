@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var draggableElements = Array.from(document.querySelectorAll('.draggable'));
 
     // create bodies for each draggable element
-    draggableElements.forEach(function(el) {
+    draggableElements.forEach(function(el, index) {
         var rect = el.getBoundingClientRect();
         var randomX = Math.random() * (containerWidth - rect.width);
         var randomY = Math.random() * (containerHeight - rect.height);
@@ -81,21 +81,42 @@ document.addEventListener('DOMContentLoaded', function() {
             el.isDragging = true;
             // Disable engine gravity while dragging for smoother movement
             engine.world.gravity.y = 0;
-            // Store initial position offset
-            var rect = el.getBoundingClientRect();
-            el.dragOffsetX = event.clientX - rect.left;
-            el.dragOffsetY = event.clientY - rect.top;
+            // Store initial position offset relative to window
+            el.dragStartX = event.clientX;
+            el.dragStartY = event.clientY;
+            // Store initial body position
+            el.bodyStartX = body.position.x;
+            el.bodyStartY = body.position.y;
             // Bring element to front
             el.style.zIndex = 1000;
         });
 
-        // handle mouse move
-        el.addEventListener('mousemove', function(event) {
+        // handle mouse move on document
+        document.addEventListener('mousemove', function(event) {
             if (el.isDragging) {
-                var mouseX = event.clientX - matterRect.left;
-                var mouseY = event.clientY - matterRect.top;
-                var newPosition = { x: mouseX - el.dragOffsetX, y: mouseY - el.dragOffsetY };
-                Body.setPosition(body, newPosition);
+                var deltaX = event.clientX - el.dragStartX;
+                var deltaY = event.clientY - el.dragStartY;
+                var newX = el.bodyStartX + deltaX;
+                var newY = el.bodyStartY + deltaY;
+                Body.setPosition(body, { x: newX, y: newY });
+
+                // Check for collision with other bodies
+                draggableBodies.forEach(function(item, i) {
+                    if (i !== index) {
+                        var otherBody = item.body;
+                        var collision = Matter.SAT.collides(body, otherBody);
+                        if (collision.collided) {
+                            var normal = collision.normal;
+                            var overlap = collision.overlap;
+
+                            // Separate the bodies along the collision normal
+                            Body.translate(body, {
+                                x: -normal.x * overlap,
+                                y: -normal.y * overlap
+                            });
+                        }
+                    }
+                });
             }
         });
 
@@ -170,3 +191,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+    
