@@ -1,161 +1,161 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
 
 <div class="container"> <!-- CONTAINER -->
-
   <nav class="nav"> <!-- NAV -->
     <ul class="nav-menu">
-      <li class="nav-list"><a class="nav-link" href="#">Home</a></li>
-      <li class="nav-list"><a class="nav-link" href="#">Hello</a></li>
-      <li class="nav-list"><a class="nav-link" href="#">Services</a></li>
-      <li class="nav-list"><a class="nav-link" href="#">Portfolio</a></li>
-      <li class="nav-list"><a class="nav-link" href="#">Contact</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'home'" (click)="scrollToSection('home')"><a class="nav-link">Home</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'hello'" (click)="scrollToSection('hello')"><a class="nav-link">Hello</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'services'" (click)="scrollToSection('services')"><a class="nav-link">Services</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'portfolio'" (click)="scrollToSection('portfolio')"><a class="nav-link">Portfolio</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'contact'" (click)="scrollToSection('contact')"><a class="nav-link">Contact</a></li>
     </ul>
   </nav>
 
-<main class="main"> <!-- MAIN -->
-  <div>
-    <section class="main-text-img">
-      <h1 class="title">synertech</h1>
-      <h2 class="subtitle">let` smake something</h2>
-      <h2 class="subtitle"> 
-      <img class="icon-black-circle" src="../assets/black-circle.png" alt="Black-circle">
-      <span class="great-subtitle">great</span> together</h2>
-      <img class="logo-img" src="../assets/logo.png" alt="Logo">
-    </section>
-    <div class="main-text-btn-get-started">
-      <p class="main-text-building">Building Up Communities, Careers & <br> Enterprises Worldwide</p>
-      <button class="button-get-started">get started</button>
-    </div>
-    <section class="block-phones">
-      <img class="phones-img" src="../assets/main-phone-photo.png" alt="Phones">
-    </section>
-    <section class="services-section">
-      <h2 class="services-title">Services</h2>
-      <div class="services-cards-list">
-        <div class="services-card">
-          <span class="title-cards">dEVELOPMENT</span>
-          <div class="engineering-list">
-            <span class="engineering-specialty">Front End</span>
-            <span class="engineering-specialty">Back End</span>
-            <span class="engineering-specialty">Mobile App</span>
-          </div>
-          <img class="cards-img" src="../assets/cards/spring.png.png" alt="spring">
-          <button class="button-get-started-card hover-btn-card"><span class="button-get-started-card-text">get started</span>
-            <svg  class="icon-arrow" width="45" height="34">
-              <use href="../assets/icon.svg#icon-arrow"></use>
-            </svg>
-        </button>
-        </div>
-        <div class="services-card">
-          <span class="title-cards">design</span>
-          <div class="engineering-list">
-            <span class="engineering-specialty">Creative</span>
-            <span class="engineering-specialty">Brand</span>
-            <span class="engineering-specialty">UI/UX</span>
-          </div>
-          <img class="cards-img-figure" src="../assets/cards/figure.png.png" alt="figure">
-          <button class="button-get-started-card-design hover-btn-card"><span class="button-get-started-card-text">get started</span>
-            <svg  class="icon-arrow" width="45" height="34">
-              <use href="../assets/icon.svg#icon-arrow"></use>
-            </svg>
-        </button>
-        </div>
-        <div class="services-card">
-          <span class="title-cards">marketing</span>
-          <div class="engineering-list">
-            <span class="engineering-specialty">SMM</span>
-            <span class="engineering-specialty">Email Marketing</span>
-            <span class="engineering-specialty">Target</span>
-          </div>
-          <img class="cards-img-snail" src="../assets/cards/snail.png" alt="snail">
-          <button class="button-get-started-card snail-btn hover-btn-card"><span class="button-get-started-card-text">get started</span>
-            <svg  class="icon-arrow" width="45" height="34">
-              <use href="../assets/icon.svg#icon-arrow"></use>
-            </svg>
-        </button>
-        </div>
+  <main class="main"> <!-- MAIN -->
+    <div>
+      <section id="home" class="main-text-img">
+        <h1 class="title">synertech</h1>
+        <h2 class="subtitle">let` smake something</h2>
+        <h2 class="subtitle"> 
+          <img class="icon-black-circle" src="../assets/black-circle.png" alt="Black-circle">
+          <span class="great-subtitle">great</span> together
+        </h2>
+        <img class="logo-img" src="../assets/logo.png" alt="Logo">
+      </section>
+      <div class="main-text-btn-get-started">
+        <p class="main-text-building">Building Up Communities, Careers & <br> Enterprises Worldwide</p>
+        <button class="button-get-started" (click)="scrollToSection('contact')">get started</button>
       </div>
-    </section>
-    <section class="matter-section">
-      <div class="matter">
-        <div class="background-1 draggable" id="body1">web design</div>
-        <div class="background-2 draggable" id="body2">creativity</div>
-        <div class="background-1 draggable" id="body3">experience</div>
-        <div class="background-2 draggable" id="body4">mobile app</div>
-        <div class="background-1 draggable" id="body5">smm</div>
-        <div class="background-2 draggable" id="body6">brands</div>
-        <div class="background-1 draggable" id="body7">front-end</div>
-        <div class="background-2 draggable" id="body8">animation</div>
-        <div class="background-1 draggable" id="body9">figma</div>
-        <canvas id="matterCanvas"></canvas>
-      </div>
-    </section>
-    <section class="portfolio-section">
-      <div class="portfolio">
-        <h2 class="portfolio-title">portfolio</h2>
-        <div class="portfolio-cards">
-          <div class="portfolio-card-img"><img src="../assets/portfolio/portfolio-card.png.png" alt="portfolio-card"></div>
-          <div class="portfolio-card-phone"><img src="../assets/portfolio/phone-portfolio.png.png" alt="phone-portfolio"></div>
-        </div>
-      </div>
-    </section>
-    <section class="connect-section">
-      <div class="connect">
-        <h2 class="title-connect ">connect</h2>
-        <div class="connect-btn">
-          <div>
-            <img src="../assets/arrow-down-while.png.png" alt="arrow-down-while">
-        </div>
-          <p class="get-title">get started</p>
-          <div>
-            <img src="../assets/arrow-down-while.png.png" alt="arrow-down-while">
+      <section id="hello" class="block-phones">
+        <img class="phones-img" src="../assets/main-phone-photo.png" alt="Phones">
+      </section>
+      <section id="services" class="services-section">
+        <h2 class="services-title">Services</h2>
+        <div class="services-cards-list">
+          <div class="services-card">
+            <span class="title-cards">dEVELOPMENT</span>
+            <div class="engineering-list">
+              <span class="engineering-specialty">Front End</span>
+              <span class="engineering-specialty">Back End</span>
+              <span class="engineering-specialty">Mobile App</span>
+            </div>
+            <img class="cards-img" src="../assets/cards/spring.png.png" alt="spring">
+            <button class="button-get-started-card hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
+              <svg class="icon-arrow" width="45" height="34">
+                <use href="../assets/icon.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="services-card">
+            <span class="title-cards">design</span>
+            <div class="engineering-list">
+              <span class="engineering-specialty">Creative</span>
+              <span class="engineering-specialty">Brand</span>
+              <span class="engineering-specialty">UI/UX</span>
+            </div>
+            <img class="cards-img-figure" src="../assets/cards/figure.png.png" alt="figure">
+            <button class="button-get-started-card-design hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
+              <svg class="icon-arrow" width="45" height="34">
+                <use href="../assets/icon.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="services-card">
+            <span class="title-cards">marketing</span>
+            <div class="engineering-list">
+              <span class="engineering-specialty">SMM</span>
+              <span class="engineering-specialty">Email Marketing</span>
+              <span class="engineering-specialty">Target</span>
+            </div>
+            <img class="cards-img-snail" src="../assets/cards/snail.png" alt="snail">
+            <button class="button-get-started-card snail-btn hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
+              <svg class="icon-arrow" width="45" height="34">
+                <use href="../assets/icon.svg#icon-arrow"></use>
+              </svg>
+            </button>
           </div>
         </div>
-        <div class="connect-text-interest">
-          <p class="text-interest">What interests you?</p>
+      </section>
+      <section id="matter" class="matter-section">
+        <div class="matter">
+          <div class="background-1 draggable" id="body1">web design</div>
+          <div class="background-2 draggable" id="body2">creativity</div>
+          <div class="background-1 draggable" id="body3">experience</div>
+          <div class="background-2 draggable" id="body4">mobile app</div>
+          <div class="background-1 draggable" id="body5">smm</div>
+          <div class="background-2 draggable" id="body6">brands</div>
+          <div class="background-1 draggable" id="body7">front-end</div>
+          <div class="background-2 draggable" id="body8">animation</div>
+          <div class="background-1 draggable" id="body9">figma</div>
+          <canvas id="matterCanvas"></canvas>
         </div>
-        <div class="list-click-block">
-          <div class="img-click-block development-block">
-            <img class="img-click-img" src="../assets/connect/development.png" alt="">
-          <p class="img-click-text">development</p>
+      </section>
+      <section id="portfolio" class="portfolio-section">
+        <div class="portfolio">
+          <h2 class="portfolio-title">portfolio</h2>
+          <div class="portfolio-cards">
+            <div class="portfolio-card-img"><img src="../assets/portfolio/portfolio-card.png.png" alt="portfolio-card"></div>
+            <div class="portfolio-card-phone"><img src="../assets/portfolio/phone-portfolio.png.png" alt="phone-portfolio"></div>
+          </div>
         </div>
-        <div class="img-click-block design-block">
-          <img class="img-click-img" src="../assets/connect/development.png" alt="">
-          <p class="img-click-text">design</p>
-        </div>
-        <div class="img-click-block marketing-block">
-          <img class="img-click-img" src="../assets/connect/development.png" alt="">
-          <p class="img-click-text">marketing</p>
-        </div>
-        </div>
-        <div class="get-started">
-          <p class="get-started-text">( Get started )</p>
-        </div>
-        <div class="footer-block-get-started">
-          <div class="footer-text-email">
-            <p class="footer-text">Building Up Communities, Careers & Enterprises Worldwide</p>
+      </section>
+      <section id="contact" class="connect-section">
+        <div class="connect">
+          <h2 class="title-connect">connect</h2>
+          <div class="connect-btn">
             <div>
-              <a class="footer-email" href="mailto:synertech&#64;gmail.com">synertech&#64;gmail.com</a>
+              <img src="../assets/arrow-down-while.png.png" alt="arrow-down-while">
+            </div>
+            <p class="get-title">get started</p>
+            <div>
+              <img src="../assets/arrow-down-while.png.png" alt="arrow-down-while">
             </div>
           </div>
-          <div>
-            <div class="footer-get-started-block-button">
-              <p class="footer-get-started-text">get started</p>
-              <button class="footer-button-get-started">
-                <svg class="icon-arrow-black" width="92" height="68">
-                  <use xlink:href="../assets/icon.svg#icon-arrow-top-right"></use>
-                </svg>
-              </button>              
+          <div class="connect-text-interest">
+            <p class="text-interest">What interests you?</p>
+          </div>
+          <div class="list-click-block">
+            <div class="img-click-block development-block">
+              <img class="img-click-img" src="../assets/connect/development.png" alt="">
+              <p class="img-click-text">development</p>
+            </div>
+            <div class="img-click-block design-block">
+              <img class="img-click-img" src="../assets/connect/development.png" alt="">
+              <p class="img-click-text">design</p>
+            </div>
+            <div class="img-click-block marketing-block">
+              <img class="img-click-img" src="../assets/connect/development.png" alt="">
+              <p class="img-click-text">marketing</p>
             </div>
           </div>
-          <div class="footer-reserved-privacy">
-            <p class="footer-reserved">2024&#64; all rights reserved</p>
-            <p class="footer-privacy">Privacy Policy</p>
+          <div class="get-started">
+            <p class="get-started-text">( Get started )</p>
+          </div>
+          <div class="footer-block-get-started">
+            <div class="footer-text-email">
+              <p class="footer-text">Building Up Communities, Careers & Enterprises Worldwide</p>
+              <div>
+                <a class="footer-email" href="mailto:synertech&#64;gmail.com">synertech&#64;gmail.com</a>
+              </div>
+            </div>
+            <div>
+              <div class="footer-get-started-block-button">
+                <p class="footer-get-started-text">get started</p>
+                <button class="footer-button-get-started" (click)="scrollToTop()">
+                  <svg class="icon-arrow-black" width="92" height="68">
+                    <use xlink:href="../assets/icon.svg#icon-arrow-top-right"></use>
+                  </svg>
+                </button>              
+              </div>
+            </div>
+            <div class="footer-reserved-privacy">
+              <p class="footer-reserved">2024&#64; all rights reserved</p>
+              <p class="footer-privacy">Privacy Policy</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-</main>
-
+      </section>
+    </div>
+  </main>
 </div>
+
