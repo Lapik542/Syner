@@ -6,7 +6,7 @@
         url('Nekst-SemiBold.woff2') format('woff2'),
         url('Nekst-SemiBold.woff') format('woff'),
         url('Nekst-SemiBold.ttf') format('truetype');
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -18,7 +18,7 @@
         url('Nekst-Regular.woff2') format('woff2'),
         url('Nekst-Regular.woff') format('woff'),
         url('Nekst-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -54,7 +54,7 @@
         url('Nekst-Bold.woff2') format('woff2'),
         url('Nekst-Bold.woff') format('woff'),
         url('Nekst-Bold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: 600;
     font-style: normal;
 }
 

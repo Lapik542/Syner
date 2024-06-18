@@ -58,6 +58,15 @@ export class AppComponent {
     };
   }
 
+  onSwiperDragMove() {
+    if (this.swiper) {
+      const activeIndex = this.swiper.activeIndex;
+      if (activeIndex !== undefined && activeIndex !== null) {
+        this.activeSlideIndex = activeIndex;
+      }
+    }
+  }
+
   onSwiper(swiper: Swiper) {
     this.swiper = swiper;
   }
@@ -65,6 +74,7 @@ export class AppComponent {
   goToSlide(index: number) {
     if (this.swiper) {
       this.swiper.slideTo(index);
+      this.activeSlideIndex = index;
     }
   }
 
