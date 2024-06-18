@@ -526,6 +526,62 @@ text-transform: uppercase;
     fill: white;
 }
 
+// ANIMATION BLOCK
+
+.connect-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .animated-arrow {
+    position: relative;
+    overflow: hidden; 
+    width: 76px;
+    height: 38px;
+  }
+  
+  .animated-arrow img {
+    position: absolute;
+    animation: fall 3s infinite;
+    width: 76px;
+    height: 38px; 
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -100%;
+      display: none;
+    }
+    10% {
+      top: -100%;
+      display: block;
+      opacity: 0;
+    }
+    20% {
+      top: 0;
+      opacity: 1;
+    }
+    50% {
+      top: 100%;
+      opacity: 1;
+    }
+    60% {
+      top: 100%;
+      opacity: 0;
+    }
+    70% {
+      top: -170%;
+      display: none;
+    }
+    100% {
+      top: -100%;
+      display: none;
+    }
+  }  
+  
+// ANIMATION BLOCK
+
 .connect-text-interest {
     margin-top: 16px;
     display: flex;

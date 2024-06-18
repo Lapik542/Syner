@@ -14,7 +14,7 @@ import { SwiperModule } from 'swiper/angular';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  currentSection: string = '';
+  currentSection: string = 'home';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
