@@ -101,6 +101,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 var deltaY = event.clientY - el.dragStartY;
                 var newX = el.bodyStartX + deltaX;
                 var newY = el.bodyStartY + deltaY;
+
+                // Constrain newX and newY within container bounds
+                newX = Math.max(Math.min(newX, containerWidth - rect.width), 0);
+                newY = Math.max(Math.min(newY, containerHeight - rect.height), 0);
+
                 Body.setPosition(body, { x: newX, y: newY });
             }
         });

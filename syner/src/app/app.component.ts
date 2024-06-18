@@ -1,12 +1,15 @@
-import { Component, HostListener } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SwiperModule],
+  imports: [RouterOutlet, SwiperModule, NgClass],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -36,10 +39,48 @@ export class AppComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  config: SwiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 50,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
-  };
+  @ViewChild('swiper') swiper: Swiper | undefined;
+  activeSlideIndex: number = 0;
+  swiperConfig: SwiperOptions = {};
+
+  slides = [
+    'Slide 1',
+    'Slide 2',
+    'Slide 3',
+    'Slide 4',
+    'Slide 5',
+    'Slide 6'
+  ];
+
+  constructor() {}
+
+  ngOnInit() {
+    this.swiperConfig = {
+      slidesPerView: 3,
+      spaceBetween: 40,
+      pagination: { clickable: true },
+      on: {
+        slideChange: () => {
+          this.activeSlideIndex = this.swiper?.activeIndex || 0;
+        }
+      },
+    };
+  }
+
+  onSwiper(swiper: Swiper) {
+    this.swiper = swiper;
+  }
+
+  goToSlide(index: number) {
+    if (this.swiper) {
+      this.swiper.slideTo(index);
+    }
+  }
+
+  scrollToActiveRectangle() {
+    const activeRect = document.getElementById(`rect${this.activeSlideIndex + 1}`);
+    if (activeRect) {
+      activeRect.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
 }

@@ -75,7 +75,7 @@
     border-top: none;
     margin-left: 64px;
     height: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 }
 
 .main-text-img {
@@ -458,6 +458,28 @@ text-transform: uppercase;
     height: 517px;
   } 
   
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 18px;
+  }
+
+  .rectangle {
+    width: 60px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: #FCFF62;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .rectangle.active {
+    background-color: #000;
+  }
+  
+
 //   CONNECT
 
 .connect-section {
@@ -602,7 +624,7 @@ cursor: pointer;
     border: 1px solid #000;
     background: #000;
     margin-top: 16px;
-    margin-bottom: 130px;
+    margin-bottom: 32px;
 }
 
 .footer-text-email {

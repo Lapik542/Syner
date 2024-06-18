@@ -90,8 +90,8 @@
       </section>
       <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
-          <h2 class="portfolio-title">portfolio</h2>
-          <swiper [slidesPerView]="3" [spaceBetween]="40" [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true }" >
+          <h2 class="portfolio-title">Portfolio</h2>
+          <swiper [slidesPerView]="3" [spaceBetween]="40" [pagination]="{ clickable: true }" (swiper)="onSwiper($event)" [config]="swiperConfig">
             <ng-template swiperSlide>
               <div class="swiper-slide">Slide 1</div>
             </ng-template>
@@ -110,9 +110,16 @@
             <ng-template swiperSlide>
               <div class="swiper-slide">Slide 6</div>
             </ng-template>
-            
           </swiper>
-        </div>  
+        </div>
+      
+        <!-- Navigation rectangles -->
+        <div class="navigation">
+          <div id="rect1" class="rectangle" (click)="goToSlide(0)" [ngClass]="{'active': activeSlideIndex === 0}"></div>
+          <div id="rect2" class="rectangle" (click)="goToSlide(1)" [ngClass]="{'active': activeSlideIndex === 1}"></div>
+          <div id="rect3" class="rectangle" (click)="goToSlide(2)" [ngClass]="{'active': activeSlideIndex === 2}"></div>
+          <div id="rect4" class="rectangle" (click)="goToSlide(3)" [ngClass]="{'active': activeSlideIndex === 3}"></div>
+        </div>
       </section>
       
       <section id="contact" class="connect-section">
