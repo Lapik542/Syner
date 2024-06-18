@@ -43,15 +43,6 @@ export class AppComponent {
   activeSlideIndex: number = 0;
   swiperConfig: SwiperOptions = {};
 
-  slides = [
-    'Slide 1',
-    'Slide 2',
-    'Slide 3',
-    'Slide 4',
-    'Slide 5',
-    'Slide 6'
-  ];
-
   constructor() {}
 
   ngOnInit() {

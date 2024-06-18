@@ -470,13 +470,13 @@ text-transform: uppercase;
     width: 60px;
     height: 10px;
     border-radius: 15px;
-    background-color: #FCFF62;
+    background-color: #000;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .rectangle.active {
-    background-color: #000;
+    background-color: #FCFF62;
   }
   
 
