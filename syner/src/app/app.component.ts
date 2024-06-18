@@ -1,16 +1,17 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SwiperOptions, Swiper } from 'swiper';
+import { SwiperModule } from 'swiper/angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SwiperModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  currentSection: string = ``;
+  currentSection: string = '';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -34,5 +35,11 @@ export class AppComponent {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-}
 
+  config: SwiperOptions = {
+    slidesPerView: 3,
+    spaceBetween: 50,
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+  };
+}

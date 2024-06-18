@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var engine = Engine.create(),
         world = engine.world;
 
+    // Set stronger gravity
+    engine.world.gravity.y = 3; // Increase this value to make gravity stronger
+
     // Constants for container dimensions
     var containerWidth = 1758;
     var containerHeight = 439;
@@ -79,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             // Set dragging flag to this element
             el.isDragging = true;
-            // Disable engine gravity while dragging for smoother movement
-            engine.world.gravity.y = 0;
+            // Disable gravity on the body being dragged for smoother movement
+            body.isStatic = true;
             // Store initial position offset relative to window
             el.dragStartX = event.clientX;
             el.dragStartY = event.clientY;
@@ -99,27 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var newX = el.bodyStartX + deltaX;
                 var newY = el.bodyStartY + deltaY;
                 Body.setPosition(body, { x: newX, y: newY });
-
-                // Check for collision with other bodies
-                draggableBodies.forEach(function(item, i) {
-                    if (i !== index) {
-                        var otherBody = item.body;
-                        var collision = Matter.SAT.collides(body, otherBody);
-                        if (collision.collided) {
-                            var normal = collision.normal;
-                            var overlap = collision.overlap;
-
-                            // Separate the bodies along the collision normal
-                            Body.translate(body, {
-                                x: -normal.x * overlap,
-                                y: -normal.y * overlap
-                            });
-                        }
-                    }
-                });
             }
         });
 
+        // add body to world
         Composite.add(world, body);
 
         // store the body and element in draggableBodies array
@@ -173,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         draggableBodies.forEach(function(item) {
             var body = item.body;
             var el = item.element;
-            
+
             if (el.isDragging) {
                 // Restore absolute position
                 setTimeout(function() {
@@ -182,13 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
                     el.style.zIndex = ''; // Restore z-index
                     el.isDragging = false;
+
+                    // Re-enable physics on the body
+                    body.isStatic = false;
                 }, 0); // setTimeout with 0 delay to ensure it runs after current event loop
             }
         });
-        
-        // Restore engine gravity
-        engine.world.gravity.y = 1;
     });
-
 });
-    

@@ -1,5 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
-
 <div class="container"> <!-- CONTAINER -->
   <nav class="nav"> <!-- NAV -->
     <ul class="nav-menu">
@@ -93,12 +91,29 @@
       <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
           <h2 class="portfolio-title">portfolio</h2>
-          <div class="portfolio-cards">
-            <div class="portfolio-card-img"><img src="../assets/portfolio/portfolio-card.png.png" alt="portfolio-card"></div>
-            <div class="portfolio-card-phone"><img src="../assets/portfolio/phone-portfolio.png.png" alt="phone-portfolio"></div>
-          </div>
-        </div>
+          <swiper [slidesPerView]="3" [spaceBetween]="40" [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true }" >
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 1</div>
+            </ng-template>
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 2</div>
+            </ng-template>
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 3</div>
+            </ng-template>
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 4</div>
+            </ng-template>
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 5</div>
+            </ng-template>
+            <ng-template swiperSlide>
+              <div class="swiper-slide">Slide 6</div>
+            </ng-template>
+          </swiper>
+        </div>  
       </section>
+      
       <section id="contact" class="connect-section">
         <div class="connect">
           <h2 class="title-connect">connect</h2>
