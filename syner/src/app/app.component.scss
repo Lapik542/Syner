@@ -106,7 +106,7 @@ margin-bottom: 80px;
     display: flex;
     align-items: center;
     color: #000;
-font-family: Nekst Semi;
+font-family: Nekst;
 font-size: 120px;
 font-style: normal;
 font-weight: 600;
@@ -119,7 +119,7 @@ margin-left: 24px;
 
 .great-subtitle {
     color: #FFF;
-font-family: Nekst Semi;
+font-family: Nekst;
 font-size: 120px;
 font-style: normal;
 font-weight: 600;
@@ -203,69 +203,6 @@ transition: all 0.3s ease;
     stroke: #000;
 }
 
-// MATTER
-
-.matter-section {
-    margin-top: 40px;
-    padding: 0 30px;
-    overflow: hidden;
-    position: relative; 
-  }
-  
-  .matter {
-    display: flex;
-    width: 100%;
-    height: 440px;
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-    border-radius: 16px;
-    border: 1px solid #000;
-    flex-direction: row;
-    position: relative;
-    overflow: hidden; 
-  }
-  
-  .background-1,
-  .background-2 {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 100;
-    border-radius: 50px;
-    border: 1px solid #000;
-    font-weight: 500;
-    width: 237px;
-    height: 60px;
-    flex-shrink: 0;
-    text-transform: uppercase;
-  }
-  
-  .background-1 {
-    background-color: #000;
-    color: #fbff36;
-  }
-  
-  .background-2 {
-    background-color: transparent;
-    color: #000;
-  }
-
-  .draggable {
-    cursor: pointer;
-    position: absolute;
-    }   
-  
-  canvas {  
-    display: none;
-  }
-
 // SERVICES
 
 .services-section {
@@ -276,7 +213,7 @@ transition: all 0.3s ease;
     color: #000;
     leading-trim: both;
     text-edge: cap;
-    font-family: Nekst Semi;
+    font-family: Nekst;
     font-size: 120px;
     font-style: normal;
     font-weight: 500;
@@ -355,7 +292,6 @@ border: 1px solid #D4D0C2;
     display: flex;
 width: 153px;
 height: 92px;
-padding: 22px 32px;
 justify-content: center;
 align-items: center;
 gap: 30px;
@@ -373,7 +309,6 @@ margin-top: -12px;
     display: flex;
 width: 153px;
 height: 92px;
-padding: 22px 32px;
 justify-content: center;
 align-items: center;
 gap: 30px;
@@ -390,7 +325,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 120%;
 text-transform: uppercase;
-transition: all 0.9s ease;
+transition: all 0.6s ease;
 }
 
 .cards-img-snail {
@@ -402,13 +337,14 @@ transition: all 0.9s ease;
 }
 
 .hover-btn-card {
-    transition: all 0.9s ease;
+    padding: 12px 32px;
+    transition: all 0.9s ease-out;
 }
 
 .hover-btn-card:hover {
     display: flex;
 width: 446px;
-padding: 22px 32px;
+height: 88px;
 justify-content: center;
 align-items: center;
 gap: 30px;
@@ -420,6 +356,70 @@ background: #FBFF36;
         overflow: hidden;   
     }
 }
+
+// MATTER
+
+.matter-section {
+    margin-top: 40px;
+    padding: 0 30px;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  .matter {
+    display: flex;
+    width: 100%;
+    height: 440px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    border-radius: 16px;
+    border: 1px solid #000;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden; 
+  }
+  
+  .background-1,
+  .background-2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-weight: Nekst Semi;
+    width: 200px;
+    height: 50px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  
+  .background-1 {
+    background-color: #000;
+    color: #fbff36;
+  }
+  
+  .background-2 {
+    background-color: transparent;
+    color: #000;
+  }
+
+  .draggable {
+    cursor: pointer;
+    position: absolute;
+    }   
+  
+  canvas {  
+    display: none;
+  }
+
 
 // PORTFOLIO
 
@@ -441,7 +441,7 @@ text-edge: cap;
 font-family: Nekst;
 font-size: 120px;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 line-height: 264.96px; /* 220.8% */
 text-transform: uppercase;
 }
@@ -494,7 +494,7 @@ text-edge: cap;
 font-family: Nekst;
 font-size: 120px;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 line-height: 264.96px; 
 text-transform: uppercase;
 }
@@ -615,6 +615,8 @@ cursor: pointer;
     text-transform: capitalize;
 }
 
+// FOOTER
+
 .footer-block-get-started {
     width: 1752px;
     padding: 0 34px;
@@ -638,7 +640,7 @@ cursor: pointer;
     font-family: Nekst;
     font-size: 48px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 120%; /* 57.6px */
     width: 782px;
 }
@@ -668,7 +670,7 @@ cursor: pointer;
     font-family: Nekst;
     font-size: 150px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
 }

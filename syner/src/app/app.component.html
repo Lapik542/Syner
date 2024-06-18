@@ -91,7 +91,14 @@
       <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
           <h2 class="portfolio-title">Portfolio</h2>
-          <swiper [slidesPerView]="3" [spaceBetween]="40" [pagination]="{ clickable: true }" (swiper)="onSwiper($event)" [config]="swiperConfig" (swiperDragMove)="onSwiperDragMove()">
+          <swiper
+            [slidesPerView]="3"
+            [spaceBetween]="40"
+            [pagination]="{ clickable: true }"
+            (swiper)="onSwiper($event)"
+            [config]="swiperConfig"
+            (swiperDragMove)="onSwiperDragMove()"
+          >
             <ng-template swiperSlide>
               <div class="swiper-slide">Slide 1</div>
             </ng-template>
@@ -109,14 +116,28 @@
             </ng-template>
           </swiper>
         </div>
-      
         <!-- Navigation rectangles -->
         <div class="navigation">
-          <div id="rect1" class="rectangle" (click)="goToSlide(0)" [ngClass]="{'active': activeSlideIndex === 0}"></div>
-          <div id="rect2" class="rectangle" (click)="goToSlide(1)" [ngClass]="{'active': activeSlideIndex === 1}"></div>
-          <div id="rect3" class="rectangle" (click)="goToSlide(2)" [ngClass]="{'active': activeSlideIndex === 2}"></div>
+          <div
+            id="rect1"
+            class="rectangle"
+            (click)="goToSlide(0)"
+            [ngClass]="{'active': activeSlideIndex === 0}"
+          ></div>
+          <div
+            id="rect2"
+            class="rectangle"
+            (click)="goToSlide(1)"
+            [ngClass]="{'active': activeSlideIndex === 1}"
+          ></div>
+          <div
+            id="rect3"
+            class="rectangle"
+            (click)="goToSlide(2)"
+            [ngClass]="{'active': activeSlideIndex === 2}"
+          ></div>
         </div>
-      </section>      
+      </section>
       <section id="contact" class="connect-section">
         <div class="connect">
           <h2 class="title-connect">connect</h2>

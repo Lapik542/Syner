@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'Nekst Semi';
+    font-family: 'Nekst';
     src: url('Nekst-SemiBold.eot');
     src: local('Nekst Semi Bold'), local('Nekst-SemiBold'),
         url('Nekst-SemiBold.eot?#iefix') format('embedded-opentype'),
         url('Nekst-SemiBold.woff2') format('woff2'),
         url('Nekst-SemiBold.woff') format('woff'),
         url('Nekst-SemiBold.ttf') format('truetype');
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -54,7 +54,7 @@
         url('Nekst-Bold.woff2') format('woff2'),
         url('Nekst-Bold.woff') format('woff'),
         url('Nekst-Bold.ttf') format('truetype');
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
 }
 
