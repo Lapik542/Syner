@@ -75,7 +75,8 @@
     border-top: none;
     margin-left: 64px;
     height: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 24px;
+    padding-top: 90px;
 }
 
 .main-text-img {
@@ -92,8 +93,7 @@ line-height: 100%; /* 35px */
 text-transform: uppercase;
 
 margin-left: 32px;
-margin-top: 40px;
-margin-bottom: 80px;
+margin-bottom: 50px;
 }
 
 .icon-black-circle {
@@ -131,7 +131,7 @@ margin-right: 24px;
 
 .logo-img {
     position: absolute;
-    top: 202px;
+    top: 172px;
     right: 146px;
 }
 
@@ -144,7 +144,7 @@ margin-right: 24px;
 font-family: "Crique Grotesk";
 font-size: 38px;
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 line-height: 120%; 
 
 margin-left: 26px;
@@ -187,6 +187,7 @@ transition: all 0.3s ease;
 
 .block-phones {
     margin-top: 100px;
+    padding: 0 32px;
 }
 
 .phones-img {
@@ -197,6 +198,7 @@ transition: all 0.3s ease;
     margin: 0 auto;
     z-index: 3;
     border-radius: 16px;
+    width: 100%;
 }
 
 .icon-arrow {
@@ -206,7 +208,7 @@ transition: all 0.3s ease;
 // SERVICES
 
 .services-section {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .services-title {
@@ -357,6 +359,242 @@ background: #FBFF36;
     }
 }
 
+// ABOUT US
+
+.about-us-section {
+    margin-top: 40px;
+    padding: 0 32px;
+}
+
+.about-us {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 16px;
+}
+
+.ideas-ignite-block {
+    color: #000;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+display: flex;
+width: 408.444px;
+height: 134.882px;
+padding: 40.844px 33.245px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.black-circle {
+    display: flex;
+width: 160.528px;
+height: 135.831px;
+padding: 9.499px;
+align-items: flex-start;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+background: #0E0E0E;
+}
+
+.creativity-block {
+    color: #000;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 380px;
+height: 136px;
+padding: 44.644px 45.594px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.takes-flight-fueling-innovation-block {
+    color: #D4D0C2;
+text-align: center;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 755px;
+height: 136px;
+padding: 40.844px 12.348px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+background: #0E0E0E;
+transition: color 0.5s;
+}
+
+.crafting-dreams {
+    color: #000;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 408.444px;
+padding: 40.844px 24.697px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.where-thoughts-soar {
+    color: #000;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 481.584px;
+padding: 40.844px 12.348px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.while-block-first {
+    display: flex;
+width: 158px;
+height: 126px;
+padding: 44.644px 27.546px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+}
+
+.and-imagination-creates {
+    color: #000;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 653px;
+padding: 40.844px 39.895px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.limitless-horizons {
+    color: #D4D0C2;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 735px;
+padding: 40.844px 45.594px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+background: #0E0E0E;
+transition: color 0.5s;
+}
+
+.while-block-second {
+    width: 192.824px;
+height: 125.383px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+}
+
+.unleash-your-potential {
+    color: #000;
+text-align: center;
+
+/* body 1 */
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+display: flex;
+width: 789px;
+padding: 40.844px 15.198px;
+justify-content: center;
+align-items: center;
+gap: 9.499px;
+flex-shrink: 0;
+border-radius: 237.088px;
+border: 0.95px solid #000;
+transition: color 0.5s;
+}
+
+.about-us div {
+    color: gray;
+    transition: color 0.5s;
+  }
+  
+  .about-us div.scrolled {
+    color: black;
+  }
+
+  .about-us div.scrolled.takes-flight-fueling-innovation-block,
+  .about-us div.scrolled.limitless-horizons {
+    color: #D4D0C2;
+  }
+
+  
+
 // MATTER
 
 .matter-section {
@@ -425,7 +663,7 @@ background: #FBFF36;
 
 .portfolio-section {
     max-width: 1800px;
-    margin-top: 110px;
+    margin-top: 100px;
     padding: 0 32px;
     overflow: hidden;
 }
@@ -484,7 +722,7 @@ text-transform: uppercase;
 
 .connect-section {
     padding: 0 32px;
-    margin-top: 110px;
+    margin-top: 100px;
 }
 
 .title-connect {

@@ -6,8 +6,8 @@
       <symbol id="icon-arrow" viewBox="0 0 41 32">
         <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3684" d="M24.562 1.684l14.316 14.316M38.877 16l-14.316 14.316M38.877 16h-38.175"></path>
       </symbol>
-      <symbol id="icon-arrow-top-right" viewBox="0 0 36 32">
-        <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3047" d="M9.546 1.903l24.419-0.103M33.965 1.8l-0.117 21.542M33.965 1.8l-32.714 28.86"></path>
-      </symbol>
+<symbol id="icon-arrow-top-right" viewBox="0 0 36 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3047" d="M9.546 1.903l24.419-0.103M33.965 1.8l-0.117 21.542M33.965 1.8l-32.714 28.86"></path>
+</symbol>
     </defs>
   </svg>
