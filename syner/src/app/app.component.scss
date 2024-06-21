@@ -945,13 +945,24 @@ cursor: pointer;
     width: 782px;
 }
 
-.footer-email {
+.footer-link-block {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    gap: 16px;
+}
+
+.footer-link {
     color: var(--white, #FFF);
     font-family: Nekst;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 28px */
+}
+
+.footer-link:hover {
+    text-decoration: underline;
 }
 
 .footer-button-get-started {
@@ -998,9 +1009,6 @@ cursor: pointer;
     align-items: center;
     gap: 68px;
     justify-content: center;
-}
-
-.footer-reserved {
 }
 
 .footer-reserved,
