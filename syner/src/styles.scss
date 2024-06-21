@@ -1,5 +1,9 @@
 @import url('./assets/fonts/nekst/stylesheet.css');
-@import url('./assets/fonts/crique-grotest/stylesheet.css');
+@import url('./assets/fonts/CriqueGrotesk/stylesheet.css');
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 /*Обнуление*/
 * {
