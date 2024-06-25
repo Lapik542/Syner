@@ -9,5 +9,9 @@
 <symbol id="icon-arrow-top-right" viewBox="0 0 36 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3047" d="M9.546 1.903l24.419-0.103M33.965 1.8l-0.117 21.542M33.965 1.8l-32.714 28.86"></path>
 </symbol>
+  <symbol id="icon-x" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M24 8l-16 16"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M8 8l16 16"></path>
+</symbol>
     </defs>
   </svg>

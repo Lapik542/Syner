@@ -1054,8 +1054,173 @@ cursor: pointer;
 }
 
 .form-menu {
+    position: relative;
     width: 1095px;
-    height: 95vh;
+    height: 940px;
     border-radius: 16px;
     background: #D4D0C2;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.form-menu-title {
+    color: #000;
+text-align: right;
+leading-trim: both;
+text-edge: cap;
+font-family: Nekst;
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: 100%; /* 35px */
+text-transform: uppercase;
+}
+
+.form-menu-x {
+    margin-right: 16px;
+    fill: #000;
+}
+
+.form-menu-x:hover {
+    cursor: pointer;
+    color: #929292;
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+font-family: Nekst;
+font-size: 86px;
+padding-left: 0;
+margin-left: 0;
+font-style: normal;
+font-weight: 600;
+line-height: 90.96px; /* 220.8% */
+text-transform: uppercase;
+margin-top: 16px;
+margin-bottom: 22px;
+}
+
+.form-label {
+    margin-left: 30px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.title-label {
+    color: #000;
+font-family: "Crique Grotesk";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 45.6px */
+}
+
+.what-interests-you-input {
+    width: 1000px;
+height: 78px;
+border-radius: 16px;
+background: #D4D0C2;    
+border: 1px solid #000;
+padding-left: 24px;
+margin-bottom: 24px;
+}
+
+.what-interests-you-input::placeholder {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: "Crique Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+}
+
+.what-s-your-ndustry-input {
+    width: 1000px;
+    height: 78px;
+    border-radius: 16px;
+    background: #D4D0C2;    
+    border: 1px solid #000;
+    padding-left: 24px;
+    margin-bottom: 24px;
+}
+
+.what-s-your-ndustry-input::placeholder {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: "Crique Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+}
+
+.what-s-your-budget-input {
+    margin-bottom: 34px;
+}
+
+.your-info-input {
+    width: 1000px;
+    height: 78px;
+    border-radius: 16px;
+    background: #D4D0C2;    
+    border: 1px solid #000;
+    padding-left: 24px;
+    margin-bottom: 24px;
+    z-index: 100;
+}
+
+.your-info-input::placeholder {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: "Crique Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+}
+
+.form-button-send {
+    position: absolute;
+    border-radius: 50%;
+    color: var(--black, #000);
+text-align: center;
+
+/* button small */
+font-family: Nekst;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+width: 116px;
+height: 116px;
+flex-shrink: 0;
+background-color: #FCFF62;
+right: 100px;
+bottom: 30px;
+transition: all 0.3s ease;
+}
+
+.form-button-send:hover {
+    bottom: 8px;
 }

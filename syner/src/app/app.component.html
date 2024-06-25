@@ -218,25 +218,29 @@
 <form action="" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
     <div class="form-menu-header">
-      <p>synertech</p>
-      <img (click)="toggleForm()" src="../assets/connect/x.png" alt="x">
+      <p class="form-menu-title">synertech</p>
+      <div (click)="toggleForm()">
+        <svg class="form-menu-x" width="84" height="84">
+          <use href="../assets/icon.svg#icon-x"></use>
+        </svg>
+      </div>
     </div>
     <p class="form-title">Let` s get started </p>
-    <label for="">
-      What interests you?
-      <input class="what-interests-you-input" type="text">
+    <label class="form-label" for="">
+      <p class="title-label">What interests you?</p>
+      <input placeholder="Type your text" class="what-interests-you-input" type="text">
     </label>
-    <label for="">
-      What`s your industry?
-      <input class="what`s-your-ndustry-input" type="text">
+    <label class="form-label" for="">
+      <p class="title-label">What`s your industry?</p>
+      <input placeholder="Type your text" class="what-s-your-ndustry-input" type="text">
     </label>
-    <label for="">
-      What`s your budget?
-      <input class="what`s-your-budget-input" type="checkbox">
+    <label class="form-label" for="">
+      <p class="title-label">What`s your budget?</p>
+      <input class="what-s-your-budget-input" type="checkbox">
     </label>
-    <label for="">
-      Your info
-      <input class="your-info-input" type="text">
+    <label class="form-label" for="">
+      <p class="title-label">Your info</p>
+      <input placeholder="Type your text" class="your-info-input" type="text">
     </label>
     <button class="form-button-send" type="submit">Send</button>
   </div>
