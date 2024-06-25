@@ -1,17 +1,17 @@
- <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <symbol id="black-circle" viewBox="0 0 32 32">
-        <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
-      </symbol>
-      <symbol id="icon-arrow" viewBox="0 0 41 32">
-        <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3684" d="M24.562 1.684l14.316 14.316M38.877 16l-14.316 14.316M38.877 16h-38.175"></path>
-      </symbol>
-<symbol id="icon-arrow-top-right" viewBox="0 0 36 32">
-<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3047" d="M9.546 1.903l24.419-0.103M33.965 1.8l-0.117 21.542M33.965 1.8l-32.714 28.86"></path>
-</symbol>
-  <symbol id="icon-x" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M24 8l-16 16"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M8 8l16 16"></path>
-</symbol>
-    </defs>
-  </svg>
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="black-circle" viewBox="0 0 32 32">
+      <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 41 32">
+      <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3684" d="M24.562 1.684l14.316 14.316M38.877 16l-14.316 14.316M38.877 16h-38.175"></path>
+    </symbol>
+    <symbol id="icon-arrow-top-right" viewBox="0 0 36 32">
+      <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.3047" d="M9.546 1.903l24.419-0.103M33.965 1.8l-0.117 21.542M33.965 1.8l-32.714 28.86"></path>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M24 8l-16 16"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.1034" d="M8 8l16 16"></path>
+    </symbol>
+  </defs>
+</svg>
