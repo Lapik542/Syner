@@ -13,6 +13,7 @@ import { SwiperModule } from 'swiper/angular';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   currentSection: string = 'home';
+  renderer: any;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -113,5 +114,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (activeRect) {
       activeRect.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
+  }
+
+  isOpen = false;
+
+  toggleForm() {
+    this.isOpen = !this.isOpen;
+    this.renderer.removeClass(document.body, 'no-scroll');
   }
 }

@@ -167,15 +167,15 @@
             <p class="text-interest">What interests you?</p>
           </div>
           <div class="list-click-block">
-            <div class="img-click-block development-block">
+            <div (click)="toggleForm()" class="img-click-block development-block">
               <img class="img-click-img" src="../assets/connect/development.png" alt="">
               <p class="img-click-text">development</p>
             </div>
-            <div class="img-click-block design-block">
+            <div (click)="toggleForm()" class="img-click-block design-block">
               <img class="img-click-img" src="../assets/connect/development.png" alt="">
               <p class="img-click-text">design</p>
             </div>
-            <div class="img-click-block marketing-block">
+            <div (click)="toggleForm()" class="img-click-block marketing-block">
               <img class="img-click-img" src="../assets/connect/development.png" alt="">
               <p class="img-click-text">marketing</p>
             </div>
@@ -215,3 +215,29 @@
   </main>
 </div>
 
+<form action="" class="form" [ngClass]="{'is-open': isOpen}">
+  <div class="form-menu">
+    <div class="form-menu-header">
+      <p>synertech</p>
+      <img (click)="toggleForm()" src="../assets/connect/x.png" alt="x">
+    </div>
+    <p class="form-title">Let` s get started </p>
+    <label for="">
+      What interests you?
+      <input class="what-interests-you-input" type="text">
+    </label>
+    <label for="">
+      What`s your industry?
+      <input class="what`s-your-ndustry-input" type="text">
+    </label>
+    <label for="">
+      What`s your budget?
+      <input class="what`s-your-budget-input" type="checkbox">
+    </label>
+    <label for="">
+      Your info
+      <input class="your-info-input" type="text">
+    </label>
+    <button class="form-button-send" type="submit">Send</button>
+  </div>
+</form>
