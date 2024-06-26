@@ -210,6 +210,10 @@ transition: all 0.3s ease;
     stroke: #000;
 }
 
+@media screen and (min-width: 1512px) and (max-width: 1919px) {
+        
+}
+
 // SERVICES
 
 .services-section {
@@ -1100,7 +1104,7 @@ text-transform: uppercase;
     justify-content: center;
     color: #000;
 font-family: Nekst;
-font-size: 86px;
+font-size: 106px;
 padding-left: 0;
 margin-left: 0;
 font-style: normal;
@@ -1223,4 +1227,23 @@ transition: all 0.3s ease;
 
 .form-button-send:hover {
     bottom: 8px;
+}
+
+.select-form {
+flex-shrink: 0;
+border-radius: 16px;
+border: 1px solid #000;
+padding: 12px 0;
+padding-left: 12px;
+padding-right: 12px;
+background-color: #D4D0C2;
+}
+
+.option-select {
+    color: rgba(0, 0, 0, 0.50);
+font-family: "Crique Grotesk";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 24px */
 }

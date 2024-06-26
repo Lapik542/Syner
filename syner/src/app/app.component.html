@@ -220,7 +220,7 @@
     <div class="form-menu-header">
       <p class="form-menu-title">synertech</p>
       <div (click)="toggleForm()">
-        <svg width="84" height="84" class="form-menu-x"><use xlink:href="#icon-x"></use></svg>
+        <img class="form-menu-x" src="../assets/connect/x.png" alt="">
       </div>
     </div>
     <p class="form-title">Let` s get started </p>
@@ -234,7 +234,12 @@
     </label>
     <label class="form-label" for="">
       <p class="title-label">What`s your budget?</p>
-      <input class="what-s-your-budget-input" type="checkbox">
+      <select class="select-form" name="pay-people">
+        <option class="option-select" value="Choose">Choose</option>
+        <option class="option-select" value="500">500</option>
+        <option class="option-select" value="1000">1000</option>
+        <option class="option-select" value="2000">2000</option>
+      </select>
     </label>
     <label class="form-label" for="">
       <p class="title-label">Your info</p>
