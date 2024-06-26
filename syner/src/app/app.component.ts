@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.aboutUsSection = document.querySelector('.about-us-section');
     if (this.aboutUsSection) {
       this.aboutUsTexts = this.aboutUsSection.querySelectorAll('div');
-      this.handleScroll(); // Виклик handleScroll для встановлення початкового стану
+      this.handleScroll();
     }
   }
 
