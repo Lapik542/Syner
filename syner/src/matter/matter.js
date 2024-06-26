@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Constants for container dimensions
     var containerWidth = 1758;
+    if (window.innerWidth < 1919) {
+        containerWidth = 1343;
+    }
     var containerHeight = 439;
+    if (window.innerWidth < 1919) {
+        containerHeight = 400;
+    }
 
     // get the matter container
     var matterContainer = document.querySelector('.matter');

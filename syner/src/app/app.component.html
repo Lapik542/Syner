@@ -46,7 +46,7 @@
         </div>
       </section>
       <!-- SERVICES -->
-      <!-- <section id="services" class="services-section">
+      <section id="services" class="services-section">
         <h2 class="services-title">Services</h2>
         <div class="services-cards-list">
           <div class="services-card">
@@ -57,8 +57,8 @@
               <span class="engineering-specialty">Mobile App</span>
             </div>
             <img class="cards-img" src="../assets/cards/spring.png.png" alt="spring">
-            <button class="button-get-started-card hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
-              <img src="../assets/arrow-right.png" alt="">
+            <button class="button-get-started-card button-get-started-card-development hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
+              <img class="arrow" src="../assets/arrow-right.png" alt="">
             </button>
           </div>
           <div class="services-card">
@@ -69,8 +69,8 @@
               <span class="engineering-specialty">UI/UX</span>
             </div>
             <img class="cards-img-figure" src="../assets/cards/figure.png.png" alt="figure">
-            <button class="button-get-started-card-design hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
-              <img src="../assets/arrow-right.png" alt="">
+            <button class="button-get-started-card-design button-get-started-card hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
+              <img class="arrow" src="../assets/arrow-right.png" alt="">
             </button>
           </div>
           <div class="services-card">
@@ -82,11 +82,12 @@
             </div>
             <img class="cards-img-snail" src="../assets/cards/snail.png" alt="snail">
             <button class="button-get-started-card snail-btn hover-btn-card" (click)="scrollToSection('contact')"><span class="button-get-started-card-text">get started</span>
-              <img src="../assets/arrow-right.png" alt="">
+              <img class="arrow" src="../assets/arrow-right.png" alt="">
             </button>
           </div>
         </div>
       </section>
+      <!-- MATTER -->
       <section id="matter" class="matter-section">
         <div class="matter">
           <div class="background-1 draggable" id="body1">web design</div>
@@ -101,10 +102,12 @@
           <canvas id="matterCanvas"></canvas>
         </div> 
       </section>
+      <!-- PORTFOLIO -->
       <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
           <h2 class="portfolio-title">Portfolio</h2>
           <swiper
+          class="swiper"
             [slidesPerView]="3"
             [spaceBetween]="40"
             [pagination]="{ clickable: true }"
@@ -113,24 +116,24 @@
             (swiperDragMove)="onSwiperDragMove()"
           >
             <ng-template swiperSlide>
-              <div class="swiper-slide"><img src="../assets/portfolio/card-two-portfolio-photos.png" alt="card-two-portfolio-photos"></div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-photos.png" alt="card-two-portfolio-photos"></div>
             </ng-template>
             <ng-template swiperSlide>
-              <div class="swiper-slide"><img src="../assets/portfolio/card-two-portfolio-cards.png" alt="card-two-portfolio-cards"></div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-cards.png" alt="card-two-portfolio-cards"></div>
             </ng-template>
             <ng-template swiperSlide>
-              <div class="swiper-slide"><img src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
             <ng-template swiperSlide>
-              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
             <ng-template swiperSlide>
-              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
           </swiper>
-        </div> -->
+        </div>
         <!-- Navigation rectangles -->
-        <!-- <div class="navigation">
+        <div class="navigation">
           <div
             id="rect1"
             class="rectangle"
@@ -247,4 +250,4 @@
     </label>
     <button class="form-button-send" type="submit">Send</button>
   </div>
-</form> -->
+</form>
