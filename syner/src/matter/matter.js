@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     engine.world.gravity.y = 3; // Increase this value to make gravity stronger
 
     // Constants for container dimensions
-    var containerWidth = 1758;
+    var containerWidth = 1850;
     if (window.innerWidth < 1919) {
-        containerWidth = 1343;
+        containerWidth = 1435;
     }
     var containerHeight = 439;
     if (window.innerWidth < 1919) {
