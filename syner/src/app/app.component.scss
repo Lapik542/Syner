@@ -602,6 +602,10 @@ flex-shrink: 0;
     }
 }
 
+@media screen and (min-width: 800px) and (max-width: 1511px) {
+
+}
+
 // SERVICES
 
 .services-section {
@@ -789,6 +793,7 @@ height: 442px;
         width: 300px;
         height: 140px;
         margin-left: 40px;
+        margin-top: 30px;
     }
     .button-get-started-card-design {
         font-size: 30px;
@@ -1416,6 +1421,7 @@ line-height: 120%; /* 45.6px */
 
 .what-interests-you-input {
     width: 1000px;
+    font-size: 24px;
 height: 78px;
 border-radius: 16px;
 background: #D4D0C2;    
@@ -1425,9 +1431,6 @@ margin-bottom: 24px;
 }
 
 .what-interests-you-input::placeholder {
-    position: absolute;
-    left: 14px;
-    top: 14px;
     color: rgba(0, 0, 0, 0.50);
     font-family: "Crique Grotesk";
     font-size: 18px;
