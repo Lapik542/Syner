@@ -1,5 +1,5 @@
-import { NgClass } from '@angular/common';
-import { Component, HostListener, ViewChild, OnInit, AfterViewInit } from '@angular/core';
+import { NgClass, isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
@@ -17,8 +17,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.updateCurrentSection();
-    this.handleScroll();
+    if (this.isBrowser) {
+      this.updateCurrentSection();
+      this.handleScroll();
+    }
   }
 
   @ViewChild('swiper') swiper: Swiper | undefined;
@@ -28,6 +30,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   private aboutUsSection: HTMLElement | null = null;
   private aboutUsTexts: NodeListOf<HTMLElement> | null = null;
 
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
   ngOnInit() {
     this.swiperConfig = {
       slidesPerView: 3,
@@ -35,36 +43,42 @@ export class AppComponent implements OnInit, AfterViewInit {
       pagination: { clickable: true },
       on: {
         slideChange: () => {
-          this.activeSlideIndex = this.swiper?.activeIndex || 0;
+          if (this.isBrowser) {
+            this.activeSlideIndex = this.swiper?.activeIndex || 0;
+          }
         }
       },
     };
   }
 
   ngAfterViewInit() {
-    this.aboutUsSection = document.querySelector('.about-us-section');
-    if (this.aboutUsSection) {
-      this.aboutUsTexts = this.aboutUsSection.querySelectorAll('div');
-      this.handleScroll();
+    if (this.isBrowser) {
+      this.aboutUsSection = document.querySelector('.about-us-section');
+      if (this.aboutUsSection) {
+        this.aboutUsTexts = this.aboutUsSection.querySelectorAll('div');
+        this.handleScroll();
+      }
     }
   }
 
   updateCurrentSection() {
-    const sections = document.querySelectorAll('section');
-    let current = '';
+    if (this.isBrowser) {
+      const sections = document.querySelectorAll('section');
+      let current = '';
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      if (window.pageYOffset >= sectionTop - 60) {
-        current = section.getAttribute('id')!;
-      }
-    });
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id')!;
+        }
+      });
 
-    this.currentSection = current;
+      this.currentSection = current;
+    }
   }
 
   handleScroll() {
-    if (!this.aboutUsSection || !this.aboutUsTexts) return;
+    if (!this.isBrowser || !this.aboutUsSection || !this.aboutUsTexts) return;
 
     const sectionTop = this.aboutUsSection.getBoundingClientRect().top;
     const sectionHeight = this.aboutUsSection.offsetHeight;
@@ -82,15 +96,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   scrollToSection(section: string) {
-    document.getElementById(section)!.scrollIntoView({ behavior: 'smooth' });
+    if (this.isBrowser) {
+      document.getElementById(section)!.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (this.isBrowser) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   onSwiperDragMove() {
-    if (this.swiper) {
+    if (this.isBrowser && this.swiper) {
       const activeIndex = this.swiper.activeIndex;
       if (activeIndex !== undefined && activeIndex !== null) {
         this.activeSlideIndex = activeIndex;
@@ -99,27 +117,33 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onSwiper(swiper: Swiper) {
-    this.swiper = swiper;
+    if (this.isBrowser) {
+      this.swiper = swiper;
+    }
   }
 
   goToSlide(index: number) {
-    if (this.swiper) {
+    if (this.isBrowser && this.swiper) {
       this.swiper.slideTo(index);
       this.activeSlideIndex = index;
     }
   }
 
   scrollToActiveRectangle() {
-    const activeRect = document.getElementById(`rect${this.activeSlideIndex + 1}`);
-    if (activeRect) {
-      activeRect.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (this.isBrowser) {
+      const activeRect = document.getElementById(`rect${this.activeSlideIndex + 1}`);
+      if (activeRect) {
+        activeRect.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
   }
 
   isOpen = false;
 
   toggleForm() {
-    this.isOpen = !this.isOpen;
-    this.renderer.removeClass(document.body, 'no-scroll');
+    if (this.isBrowser) {
+      this.isOpen = !this.isOpen;
+      this.renderer.removeClass(document.body, 'no-scroll');
+    }
   }
 }
