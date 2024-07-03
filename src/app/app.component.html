@@ -10,17 +10,47 @@
     </ul>
   </nav>
 
-  <main class="main"> <!-- MAIN -->
+  <div class="swiper-phone-container"> <!-- SWIPER -->
+    <swiper
+      class="swiper-phone"
+      [pagination]="{ clickable: true }"
+      (swiper)="onSwiper($event)"
+      [spaceBetween]="0"
+      [config]="swiperConfig"
+      (swiperDragMove)="onSwiperDragMove()"
+    >
+      <ng-template swiperSlide [class.active]="currentSection === 'home'" (click)="setActiveSection('home')">
+        <a class="link-photo-swiper link-spacing">Home</a>
+      </ng-template>
+      <ng-template swiperSlide [class.active]="currentSection === 'hello'" (click)="setActiveSection('hello')">
+        <a class="link-photo-swiper link-spacing">Hello</a>
+      </ng-template>
+      <ng-template swiperSlide [class.active]="currentSection === 'services'" (click)="setActiveSection('services')">
+        <a class="link-photo-swiper link-spacing">Services</a>
+      </ng-template>
+      <ng-template swiperSlide [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')">
+        <a class="link-photo-swiper link-spacing">Portfolio</a>
+      </ng-template>
+      <ng-template swiperSlide [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')">
+        <a class="link-photo-swiper link-spacing">Contact</a>
+      </ng-template>
+    </swiper>
+  </div>
+
+
+
+   <!-- MAIN -->
+  <main class="main">
     <div>
       <section class="main-text-img"
       id="home">
         <h1 class="title">synertech</h1>
         <h2 class="subtitle">let` s make something</h2>
-        <h2 class="subtitle"> 
+        <h2 class="subtitle">
           <img height="925" class="icon-black-circle" src="../assets/black-circle.png" alt="Black-circle">
-          <span class="great-subtitle">great</span> together
+          <span class="great"> <span class="great-subtitle">great</span> together </span>
         </h2>
-        <img class="logo-img" src="../assets/logo.png" alt="Logo">
+        <!-- <img class="logo-img" src="../assets/logo.png" alt="Logo"> -->
       </section>
       <div class="main-text-btn-get-started">
         <p class="main-text-building">Building Up Communities, Careers & <br> Enterprises Worldwide</p>
@@ -30,7 +60,7 @@
       <section id="hello" class="block-phones">
         <img class="phones-img" src="../assets/main-phone-photo.png" alt="Phones">
       </section>
-      <section class="about-us-section">
+      <!-- <section class="about-us-section">
         <script src="../scroll down text/scroll-down-text.js"></script>
         <div class="about-us">
           <div class="ideas-ignite-block">Ideas Ignite</div>
@@ -45,9 +75,9 @@
           <div class="while-block-second"></div>
           <div class="unleash-your-potential">Unleash Your Potential with Us.</div>
         </div>
-      </section>
+      </section> -->
       <!-- SERVICES -->
-      <section id="services" class="services-section">
+      <!-- <section id="services" class="services-section">
         <h2 class="services-title">Services</h2>
         <div class="services-cards-list">
           <div class="services-card">
@@ -87,9 +117,9 @@
             </button>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- MATTER -->
-      <section id="matter" class="matter-section">
+      <!-- <section id="matter" class="matter-section">
         <div class="matter-container">
           <div id="matterCanvasContainer" class="matter">
             <canvas id="matterCanvas"></canvas>
@@ -102,11 +132,11 @@
             <div class="background-1 draggable" id="body7">front-end</div>
             <div class="background-2 draggable" id="body8">animation</div>
             <div class="background-1 draggable" id="body9">figma</div>
-        </div> 
         </div>
-      </section>
+        </div>
+      </section> -->
       <!-- PORTFOLIO -->
-      <section id="portfolio" class="portfolio-section">
+      <!-- <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
           <h2 class="portfolio-title">Portfolio</h2>
           <swiper
@@ -134,9 +164,9 @@
               <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
           </swiper>
-        </div>
+        </div> -->
         <!-- Navigation rectangles -->
-        <div class="navigation">
+        <!-- <div class="navigation">
           <div
             id="rect1"
             class="rectangle"
@@ -168,7 +198,7 @@
             <div class="animated-arrow">
               <img src="../assets/arrow-down-while.png.png" alt="arrow-down-while">
             </div>
-          </div>          
+          </div>
           <div class="connect-text-interest">
             <p class="text-interest">What interests you?</p>
           </div>
@@ -207,7 +237,7 @@
                 <p class="footer-get-started-text">get started</p>
                 <button class="footer-button-get-started" (click)="scrollToTop()">
                   <img width="52" height="44" src="../assets/arrow-top-right.png" alt="">
-                </button>              
+                </button>
               </div>
             </div>
             <div class="footer-reserved-privacy">
@@ -219,7 +249,7 @@
       </section>
     </div>
   </main>
-</div>
+</div> -->
 
 <form action="" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
@@ -246,7 +276,7 @@
         <option class="option-select" value="from-1000">From 1000</option>
       </select>
     </label>
-    
+
     <label class="form-label" for="">
       <p class="title-label">Your info</p>
       <input placeholder="Type your text" class="your-info-input" type="text">

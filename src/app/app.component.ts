@@ -39,7 +39,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.swiperConfig = {
       slidesPerView: 3,
-      spaceBetween: 40,
       pagination: { clickable: true },
       on: {
         slideChange: () => {

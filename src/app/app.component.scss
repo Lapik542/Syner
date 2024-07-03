@@ -16,7 +16,7 @@
     gap: 36px;
     position: fixed;
   }
-  
+
   .nav-list {
     display: flex;
     width: 32px;
@@ -26,14 +26,14 @@
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
-  
+
     border-radius: 16px;
     background: #0E0E0E;
     border: 1px solid #000;
-  
+
     transition: all 0.3s ease;
   }
-  
+
   .nav-link {
     color: #C3BEB0;
     text-align: center;
@@ -43,36 +43,99 @@
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
-  
+
     transform: rotate(-90deg);
-  
+
     transition: all 0.3s ease;
   }
-  
+
   .nav-list:hover {
     background-color: rgb(212, 208, 194, 100%);
     border-radius: 16px;
-  
+
     & .nav-link {
       color: #000;
     }
   }
-  
+
   .nav-list.active {
     background-color: rgb(212, 208, 194, 100%);
     border-radius: 16px;
-  
+
     & .nav-link {
       color: #000;
     }
   }
-  
+
+  .swiper-phone {
+    display: none;
+  }
+
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
     .nav-menu {
         gap: 20px;
     }
     .nav-list {
         padding: 56px 0px;
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 833px) {
+    .container {
+      width: 320px;
+    }
+    .nav {
+      display: none;
+    }
+    .swiper-phone-container {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      width: 304px;
+      height: 58px;
+      padding: 12px 0px;
+      border-radius: 24px;
+      border: 1px solid #000;
+      background: #D4D0C2;
+      margin: 0 auto;
+    }
+    .swiper-phone {
+      display: block;
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+    }
+    .link-spacing {
+      margin-right: 8px;
+      margin-left: 12px;
+    }
+    .swiper-slide:last-child .link-spacing {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .link-photo-swiper {
+      color: #000;
+      border-radius: 16px;
+      border: 1px solid #000;
+      background: #D4D0C2;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-family: Nekst;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 800;
+      display: flex;
+      letter-spacing: 1px;
+      padding: 8px 14px;
+      border-radius: 16px;
+      background: #D4D0C2;
+    }
+
+    .link-photo-swiper.active {
+      color: #C3BEB0;
+      background-color: #000;
     }
   }
 
@@ -158,7 +221,7 @@ font-family: "Crique Grotesk";
 font-size: 38px;
 font-style: normal;
 font-weight: 400;
-line-height: 120%; 
+line-height: 120%;
 
 margin-left: 26px;
 margin-top: 12px;
@@ -195,7 +258,7 @@ transition: all 0.3s ease;
 }
 
 .button-get-started:hover {
-    top: 0px; 
+    top: 0px;
 }
 
 .block-phones {
@@ -442,7 +505,7 @@ transition: color 0.5s;
     color: gray;
     transition: color 0.5s;
   }
-  
+
   .about-us div.scrolled {
     color: black;
   }
@@ -452,7 +515,7 @@ transition: color 0.5s;
     color: #D4D0C2;
   }
 
-  
+
 
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
     .subtitle,
@@ -478,7 +541,7 @@ transition: color 0.5s;
         right: 470px;
     }
     .button-get-started:hover {
-        top: -10px; 
+        top: -10px;
     }
     .phones-img {
         width: 1343px;
@@ -602,6 +665,35 @@ flex-shrink: 0;
     }
 }
 
+@media screen and (min-width: 320px) and (max-width: 833px) {
+  .main {
+    border: none;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+  .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  .great {
+    width: 280px;
+  }
+  .subtitle,
+  .great-subtitle {
+      font-size: 40px;
+      margin: 0;
+  }
+  .icon-black-circle {
+    margin-right: 0;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+}
+
 @media screen and (min-width: 800px) and (max-width: 1511px) {
 
 }
@@ -699,7 +791,7 @@ justify-content: center;
 align-items: center;
 gap: 30px;
 border-radius: 47px;
-background: #FFF;  
+background: #FFF;
 margin-top: -12px;
 }
 
@@ -716,7 +808,7 @@ justify-content: center;
 align-items: center;
 gap: 30px;
 border-radius: 47px;
-background: #FFF; 
+background: #FFF;
 }
 
 .button-get-started-card-text {
@@ -756,7 +848,7 @@ background: #FBFF36;
     & .button-get-started-card-text {
         display: flex;
         white-space: nowrap;
-        overflow: hidden;   
+        overflow: hidden;
     }
 }
 
@@ -801,7 +893,7 @@ height: 442px;
     }
     .snail-btn {
         font-size: 30px;
-        margin-top: 58px; 
+        margin-top: 58px;
     }
     .hover-btn-card {
         font-size: 30px;
@@ -821,7 +913,7 @@ height: 442px;
         & .button-get-started-card-text {
             display: flex;
             white-space: nowrap;
-            overflow: hidden;   
+            overflow: hidden;
             font-size: 30px;
             padding: 0 0;
         }
@@ -941,8 +1033,8 @@ text-transform: uppercase;
     border-radius: 16px;
     width: 552px;
     height: 517px;
-  } 
-  
+  }
+
 
   .navigation {
     display: flex;
@@ -963,7 +1055,7 @@ text-transform: uppercase;
   .rectangle.active {
     background-color: #FCFF62;
   }
-  
+
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
     .portfolio-section {
         padding: 0;
@@ -1000,7 +1092,7 @@ font-family: Nekst;
 font-size: 120px;
 font-style: normal;
 font-weight: 600;
-line-height: 264.96px; 
+line-height: 264.96px;
 text-transform: uppercase;
 }
 
@@ -1038,21 +1130,21 @@ text-transform: uppercase;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .animated-arrow {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     width: 76px;
     height: 100% ;
   }
-  
+
   .animated-arrow img {
     position: absolute;
     animation: fall 3s infinite;
     width: 76px;
-    height: 38px; 
+    height: 38px;
   }
-  
+
   @keyframes fall {
     0% {
       top: -100%;
@@ -1083,8 +1175,8 @@ text-transform: uppercase;
       top: -100%;
       display: none;
     }
-  }  
-  
+  }
+
 // ANIMATION BLOCK
 
 .connect-text-interest {
@@ -1313,7 +1405,7 @@ cursor: pointer;
 
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
     .footer-block-get-started {
-        width: 1343px; 
+        width: 1343px;
         height: 610px;
     }
     .footer-get-started-block-button {
@@ -1428,7 +1520,7 @@ line-height: 120%; /* 45.6px */
     font-size: 24px;
 height: 78px;
 border-radius: 16px;
-background: #D4D0C2;    
+background: #D4D0C2;
 border: 1px solid #000;
 padding-left: 24px;
 margin-bottom: 24px;
@@ -1447,7 +1539,7 @@ margin-bottom: 24px;
     width: 1000px;
     height: 78px;
     border-radius: 16px;
-    background: #D4D0C2;    
+    background: #D4D0C2;
     border: 1px solid #000;
     padding-left: 24px;
     margin-bottom: 24px;
@@ -1473,7 +1565,7 @@ margin-bottom: 24px;
     width: 1000px;
     height: 78px;
     border-radius: 16px;
-    background: #D4D0C2;    
+    background: #D4D0C2;
     border: 1px solid #000;
     padding-left: 24px;
     margin-bottom: 24px;
