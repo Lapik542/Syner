@@ -32,41 +32,39 @@ throw new Error('Method not implemented.');
   }
 
   ngOnInit() {
-    const isMobile = window.innerWidth < 833;
+    if (this.isBrowser) {
+      const isMobile = window.innerWidth < 833;
 
-    this.swiperConfig = {
-      slidesPerView: 3,
-      spaceBetween: 0,
-      pagination: { clickable: true },
-      on: {
-        slideChange: () => {
-          if (this.isBrowser) {
-            this.activeSlideIndex = this.swiper?.activeIndex || 0;
+      this.swiperConfig = {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        pagination: { clickable: true },
+        on: {
+          slideChange: () => {
+            if (this.isBrowser && this.swiper) {
+              this.activeSlideIndex = this.swiper.activeIndex || 0;
+            }
           }
-        }
-      },
-    };
+        },
+      };
 
-    this.portfolioSwiperConfig = {
-      slidesPerView: isMobile ? 1 : 3,
-      spaceBetween: 40,
-      pagination: { clickable: true },
-      breakpoints: {
-        833: {
-          slidesPerView: 3,
+      this.portfolioSwiperConfig = {
+        slidesPerView: isMobile ? 1 : 3,
+        spaceBetween: 40,
+        pagination: { clickable: true },
+        breakpoints: {
+          833: { slidesPerView: 3 },
+          0: { slidesPerView: 1 },
         },
-        0: {
-          slidesPerView: 1,
-        },
-      },
-      on: {
-        slideChange: () => {
-          if (this.isBrowser) {
-            this.activeSlideIndex = this.swiper?.activeIndex || 0;
+        on: {
+          slideChange: () => {
+            if (this.isBrowser && this.swiper) {
+              this.activeSlideIndex = this.swiper.activeIndex || 0;
+            }
           }
-        }
-      },
-    };
+        },
+      };
+    }
   }
 
   ngAfterViewInit() {
@@ -78,6 +76,7 @@ throw new Error('Method not implemented.');
       }
     }
   }
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
