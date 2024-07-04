@@ -12,28 +12,22 @@
 
   <!-- SWIPER PHONE -->
   <div class="swiper-phone-container">
-    <swiper
-      class="swiper-phone"
-      [pagination]="{ clickable: true }"
-      (swiper)="onSwiper($event)"
-      [spaceBetween]="0"
-      [config]="swiperConfig"
-      (swiperDragMove)="onSwiperDragMove()"
-    >
+    <swiper class="swiper-phone" [pagination]="{ clickable: true }" (swiper)="onSwiper($event)"
+      [spaceBetween]="0" [config]="swiperConfig" (swiperDragMove)="onSwiperDragMove()">
       <ng-template swiperSlide>
-        <a [class.active]="currentSection === 'home'" (click)="setActiveSection('home')" class="link-photo-swiper link-spacing">Home</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'home'" (click)="setActiveSection('home')">Home</a>
       </ng-template>
       <ng-template swiperSlide>
-        <a [class.active]="currentSection === 'hello'" (click)="setActiveSection('hello')" class="link-photo-swiper link-spacing">Hello</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'hello'" (click)="setActiveSection('hello')">Hello</a>
       </ng-template>
       <ng-template swiperSlide>
-        <a [class.active]="currentSection === 'services'" (click)="setActiveSection('services')" class="link-photo-swiper link-spacing">Services</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'services'" (click)="setActiveSection('services')">Services</a>
       </ng-template>
       <ng-template swiperSlide>
-        <a [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')" class="link-photo-swiper link-spacing">Portfolio</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')">Portfolio</a>
       </ng-template>
       <ng-template swiperSlide>
-        <a [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')" class="link-photo-swiper link-spacing">Contact</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')">Contact</a>
       </ng-template>
     </swiper>
   </div>

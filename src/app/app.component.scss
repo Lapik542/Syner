@@ -108,9 +108,9 @@
       z-index: 1000;
     }
     .swiper-phone {
-      display: block;
       display: flex;
       align-items: center;
+      flex-direction: row;
 
       gap: 8px;
     }
