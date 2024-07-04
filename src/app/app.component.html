@@ -10,7 +10,8 @@
     </ul>
   </nav>
 
-  <div class="swiper-phone-container"> <!-- SWIPER -->
+  <!-- SWIPER PHONE -->
+  <div class="swiper-phone-container">
     <swiper
       class="swiper-phone"
       [pagination]="{ clickable: true }"
@@ -19,20 +20,20 @@
       [config]="swiperConfig"
       (swiperDragMove)="onSwiperDragMove()"
     >
-      <ng-template swiperSlide [class.active]="currentSection === 'home'" (click)="setActiveSection('home')">
-        <a class="link-photo-swiper link-spacing">Home</a>
+      <ng-template swiperSlide>
+        <a [class.active]="currentSection === 'home'" (click)="setActiveSection('home')" class="link-photo-swiper link-spacing">Home</a>
       </ng-template>
-      <ng-template swiperSlide [class.active]="currentSection === 'hello'" (click)="setActiveSection('hello')">
-        <a class="link-photo-swiper link-spacing">Hello</a>
+      <ng-template swiperSlide>
+        <a [class.active]="currentSection === 'hello'" (click)="setActiveSection('hello')" class="link-photo-swiper link-spacing">Hello</a>
       </ng-template>
-      <ng-template swiperSlide [class.active]="currentSection === 'services'" (click)="setActiveSection('services')">
-        <a class="link-photo-swiper link-spacing">Services</a>
+      <ng-template swiperSlide>
+        <a [class.active]="currentSection === 'services'" (click)="setActiveSection('services')" class="link-photo-swiper link-spacing">Services</a>
       </ng-template>
-      <ng-template swiperSlide [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')">
-        <a class="link-photo-swiper link-spacing">Portfolio</a>
+      <ng-template swiperSlide>
+        <a [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')" class="link-photo-swiper link-spacing">Portfolio</a>
       </ng-template>
-      <ng-template swiperSlide [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')">
-        <a class="link-photo-swiper link-spacing">Contact</a>
+      <ng-template swiperSlide>
+        <a [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')" class="link-photo-swiper link-spacing">Contact</a>
       </ng-template>
     </swiper>
   </div>
@@ -60,7 +61,7 @@
       <section id="hello" class="block-phones">
         <img class="phones-img" src="../assets/main-phone-photo.png" alt="Phones">
       </section>
-      <!-- <section class="about-us-section">
+      <section class="about-us-section">
         <script src="../scroll down text/scroll-down-text.js"></script>
         <div class="about-us">
           <div class="ideas-ignite-block">Ideas Ignite</div>
@@ -75,9 +76,9 @@
           <div class="while-block-second"></div>
           <div class="unleash-your-potential">Unleash Your Potential with Us.</div>
         </div>
-      </section> -->
+      </section>
       <!-- SERVICES -->
-      <!-- <section id="services" class="services-section">
+      <section id="services" class="services-section">
         <h2 class="services-title">Services</h2>
         <div class="services-cards-list">
           <div class="services-card">
@@ -117,9 +118,9 @@
             </button>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- MATTER -->
-      <!-- <section id="matter" class="matter-section">
+      <section id="matter" class="matter-section">
         <div class="matter-container">
           <div id="matterCanvasContainer" class="matter">
             <canvas id="matterCanvas"></canvas>
@@ -132,20 +133,17 @@
             <div class="background-1 draggable" id="body7">front-end</div>
             <div class="background-2 draggable" id="body8">animation</div>
             <div class="background-1 draggable" id="body9">figma</div>
+          </div>
         </div>
-        </div>
-      </section> -->
+      </section>
       <!-- PORTFOLIO -->
-      <!-- <section id="portfolio" class="portfolio-section">
+      <section id="portfolio" class="portfolio-section">
         <div class="portfolio">
           <h2 class="portfolio-title">Portfolio</h2>
           <swiper
-          class="swiper"
-            [slidesPerView]="3"
-            [spaceBetween]="40"
-            [pagination]="{ clickable: true }"
+            class="swiper"
+            [config]="portfolioSwiperConfig"
             (swiper)="onSwiper($event)"
-            [config]="swiperConfig"
             (swiperDragMove)="onSwiperDragMove()"
           >
             <ng-template swiperSlide>
@@ -164,9 +162,9 @@
               <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
           </swiper>
-        </div> -->
+        </div>
         <!-- Navigation rectangles -->
-        <!-- <div class="navigation">
+        <div class="navigation">
           <div
             id="rect1"
             class="rectangle"
@@ -184,9 +182,46 @@
             class="rectangle"
             (click)="goToSlide(2)"
             [ngClass]="{'active': activeSlideIndex === 2}"
+          >
+          </div>
+        </div>
+
+
+        <div class="navigation-mobile">
+          <div
+            id="rect1"
+            class="rectangle"
+            (click)="goToSlide(0)"
+            [ngClass]="{'active': activeSlideIndex === 0}"
+          ></div>
+          <div
+            id="rect2"
+            class="rectangle"
+            (click)="goToSlide(1)"
+            [ngClass]="{'active': activeSlideIndex === 1}"
+          ></div>
+          <div
+            id="rect3"
+            class="rectangle"
+            (click)="goToSlide(2)"
+            [ngClass]="{'active': activeSlideIndex === 2}"
+          >
+          </div>
+          <div
+            id="rect1"
+            class="rectangle"
+            (click)="goToSlide(3)"
+            [ngClass]="{'active': activeSlideIndex === 3}"
+          ></div>
+          <div
+            id="rect1"
+            class="rectangle"
+            (click)="goToSlide(4)"
+            [ngClass]="{'active': activeSlideIndex === 4}"
           ></div>
         </div>
       </section>
+
       <section id="contact" class="connect-section">
         <div class="connect">
           <h2 class="title-connect">connect</h2>
@@ -249,7 +284,7 @@
       </section>
     </div>
   </main>
-</div> -->
+</div>
 
 <form action="" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">

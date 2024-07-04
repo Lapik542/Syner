@@ -12,34 +12,53 @@ import { SwiperModule } from 'swiper/angular';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  currentSection: string = 'home';
-  renderer: any;
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    if (this.isBrowser) {
-      this.updateCurrentSection();
-      this.handleScroll();
-    }
-  }
-
-  @ViewChild('swiper') swiper: Swiper | undefined;
-  activeSlideIndex: number = 0;
+setActiveSection(arg0: string) {
+throw new Error('Method not implemented.');
+}
+  isBrowser: boolean;
   swiperConfig: SwiperOptions = {};
+  portfolioSwiperConfig: SwiperOptions = {};
+  currentSection: string = 'home';
+  activeSlideIndex: number = 0;
+  @ViewChild('swiper') swiper: Swiper | undefined;
 
   private aboutUsSection: HTMLElement | null = null;
   private aboutUsTexts: NodeListOf<HTMLElement> | null = null;
-
-  isBrowser: boolean;
+  isOpen = false;
+  renderer: any;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
+    const isMobile = window.innerWidth < 833;
+
     this.swiperConfig = {
       slidesPerView: 3,
+      spaceBetween: 0,
       pagination: { clickable: true },
+      on: {
+        slideChange: () => {
+          if (this.isBrowser) {
+            this.activeSlideIndex = this.swiper?.activeIndex || 0;
+          }
+        }
+      },
+    };
+
+    this.portfolioSwiperConfig = {
+      slidesPerView: isMobile ? 1 : 3,
+      spaceBetween: 40,
+      pagination: { clickable: true },
+      breakpoints: {
+        833: {
+          slidesPerView: 3,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
       on: {
         slideChange: () => {
           if (this.isBrowser) {
@@ -60,6 +79,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (this.isBrowser) {
+      this.updateCurrentSection();
+      this.handleScroll();
+    }
+  }
+
   updateCurrentSection() {
     if (this.isBrowser) {
       const sections = document.querySelectorAll('section');
@@ -67,7 +94,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 60) {
+        if (window.pageYOffset >= sectionTop - 76) {
           current = section.getAttribute('id')!;
         }
       });
@@ -137,12 +164,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  isOpen = false;
-
   toggleForm() {
     if (this.isBrowser) {
       this.isOpen = !this.isOpen;
-      this.renderer.removeClass(document.body, 'no-scroll');
+      if (this.isOpen) {
+        this.renderer.addClass(document.body, 'no-scroll');
+      } else {
+        this.renderer.removeClass(document.body, 'no-scroll');
+      }
     }
   }
 }

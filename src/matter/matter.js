@@ -26,6 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
         containerHeight = 400;
     }
 
+
+
+    if (window.innerWidth < 833) {
+      containerWidth = 320;
+    }
+    if (window.innerWidth < 833) {
+      containerHeight = 450;
+    }
+
     // get the matter container
     var matterContainer = document.querySelector('.matter');
     var matterRect = matterContainer.getBoundingClientRect();
