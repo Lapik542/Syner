@@ -104,7 +104,7 @@
     .swiper-phone-container {
       position: fixed;
       bottom: 6px;
-      width: 98%;
+      width: 60%;
       left: 0;
       right: 0;
       height: 58px;
@@ -749,7 +749,7 @@ flex-shrink: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .title {
     font-size: 30px;
@@ -1368,9 +1368,22 @@ height: 442px;
     .hover-btn-card {
       margin-top: auto;
       width: 73px;
-height: 45px;
-flex-shrink: 0;
+      height: 45px;
+      flex-shrink: 0;
     }
+    .hover-btn-card:hover {
+      display: flex;
+      width: 192px;
+      height: 45px;
+      padding: 15px 20px;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+         & .button-get-started-card-text {
+           font-size: 16px;
+         }
+    }
+
     .arrow {
       width: 25px;
       height: 18px;
@@ -1593,6 +1606,12 @@ canvas {
       width: 770px;
       height: 400px;
     }
+    .draggable {
+      width: 142px;
+      height: 42px;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
   }
 
   @media screen and (min-width: 320px) and (max-width: 833px) {
@@ -1700,6 +1719,7 @@ text-transform: uppercase;
   }
   .portfolio-title {
     font-size: 60px;
+    margin-bottom: 18px;
     line-height: normal;
   }
   .swiper-slide {
@@ -1965,6 +1985,61 @@ cursor: pointer;
     }
     .get-started {
         width: 1343px;
+        padding: 0;
+        margin-top: 32px;
+    }
+}
+
+@media screen and (min-width: 834px) and (max-width: 1511px) {
+    .connect-section {
+      padding: 0;
+      margin: 0;
+    }
+    .title-connect {
+      line-height: normal;
+      font-size: 60px;
+      margin-top: 60px;
+      margin-bottom: 18px;
+    }
+    .connect-btn {
+      position: relative;
+      gap: 0;
+      width: 770px;
+      height: 56px;
+    }
+    .get-title {
+      font-size: 36px;
+      line-height: normal;
+    }
+    .animated-arrow img {
+      position: absolute;
+    }
+    .connect-text-interest {
+      width: 770px;
+      padding: 0;
+      height: 48px;
+    }
+    .text-interest {
+      font-size: 24px;
+      line-height: normal;
+    }
+    .img-click-block {
+      width: 250px;
+      height: 163px;
+    }
+    .img-click-text{
+      font-size: 24px;
+      bottom: 12px;
+      left: 12px;
+    }
+    .get-started {
+      width: 770px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+    .get-started-text {
+      font-size: 16px;
+      line-height: normal;
     }
 }
 
@@ -1979,9 +2054,16 @@ cursor: pointer;
     margin-bottom: 16px;
   }
   .connect-btn {
-    justify-content: center;
+    padding: 0 8px;
+    gap: 32px;
+    justify-content: space-between;
     width: 288px;
     height: 50px;
+  }
+  .animated-arrow img {
+    position: absolute;
+    width: 50px;
+    height: 22px;
   }
   .arrow-down-while {
     width: 30px;
@@ -1989,6 +2071,7 @@ cursor: pointer;
   }
   .get-title {
     font-size: 14px;
+    width: 140px;
   }
   .connect-text-interest {
     width: 288px;
@@ -2155,6 +2238,56 @@ cursor: pointer;
     .footer-get-started-text {
         font-size: 110px;
     }
+}
+
+@media screen and (min-width: 834px) and (max-width: 1511px) {
+  .footer-block-get-started {
+    padding: 24px;
+    margin-top: 16px;
+    width: 770px;
+    height: 415px;
+    flex-shrink: 0;
+    padding-bottom: 0;
+  }
+  .footer-text-email {
+    margin-top: 0;
+  }
+  .footer-text {
+    font-size: 24px;
+    line-height: normal;
+    width: 316px;
+  }
+  .footer-link {
+    font-size: 16px;
+  }
+  .footer-get-started-block-button{
+    margin-top: 60px;
+    width: 722px;
+    height: 128px;
+    flex-shrink: 0;
+    padding: 20px 16px;
+  }
+  .footer-get-started-text {
+    font-size: 72px;
+    line-height: normal;
+  }
+  .footer-button-get-started {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+height: 99px;
+flex-shrink: 0;
+  }
+  .footer-reserved-privacy {
+    margin-top: 86px;
+  }
+  .footer-reserved {
+    font-size: 14px;
+  }
+  .footer-privacy {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 833px) {

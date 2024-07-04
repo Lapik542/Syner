@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containerWidth = 770;
     }
     if (window.innerWidth < 1511 && window.innerWidth > 833) {
-        containerHeight = 280;
+        containerHeight = 400;
     }
 
 
