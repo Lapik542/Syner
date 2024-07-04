@@ -280,7 +280,7 @@
   </main>
 </div>
 
-<form action="" class="form" [ngClass]="{'is-open': isOpen}">
+<form action="" class="form is-open" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
     <div class="form-menu-header">
       <p class="form-menu-title">synertech</p>
@@ -297,13 +297,13 @@
       <p class="title-label">What`s your industry?</p>
       <textarea placeholder="Type your text" class="what-s-your-ndustry-input input-form" type="text"></textarea>
     </label>
-    <label class="form-label" for="">
-      <p class="title-label">What`s your budget?</p>
+    <label class="form-label select" for="">
+      <p class="title-label ">What`s your budget?</p>
       <select class="select-form" name="pay-people">
         <option class="option-select" value="Choose">Choose</option>
-        <option class="option-select" value="from-500">From 500</option>
-        <option class="option-select" value="from-1000">From 1000</option>
-      </select>
+        <option class="option-select" value="from-500">From 500$</option>
+        <option class="option-select" value="from-1000">From 1000$</option>
+      </select>   
     </label>
 
     <label class="form-label your-info-input" for="">

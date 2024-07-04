@@ -2518,3 +2518,47 @@ font-style: normal;
 font-weight: 400;
 line-height: 120%; /* 24px */
 }
+
+@media screen and (min-width: 1512px) and (max-width: 1919px) {
+  .form-menu {
+    height: 750px;
+    padding: 28px;
+  }
+  }
+  .form-menu-title {
+    margin-bottom: 22px;
+  }
+  .form-title {
+    font-size: 32px;
+    line-height: normal;
+    margin-bottom: 16px;
+  }
+  .form-menu-x {
+    width: 50px;
+    height: 50px;
+  }
+  .title-label {
+    font-size: 24px;
+    line-height: normal;
+  }
+  .select {
+    margin-top: 8px;
+  }
+  .form-label {
+    gap: 8px;
+  }
+  .what-interests-you-input {
+    margin-bottom: 8px;
+  }
+  .input-form {
+    font-size: 16px;
+    line-height: normal;
+    height: 100px;
+  }
+  .form-button-send {
+    width: 90px;
+    height: 90px;
+    right: 50px;
+    bottom: 30px;
+  }
+
