@@ -12,10 +12,9 @@ import { SwiperModule } from 'swiper/angular';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  setActiveSection(section: string) {
-    this.currentSection = section;
-    this.scrollToSection(section);
-  }
+setActiveSection(arg0: string) {
+throw new Error('Method not implemented.');
+}
   isBrowser: boolean;
   swiperConfig: SwiperOptions = {};
   portfolioSwiperConfig: SwiperOptions = {};
