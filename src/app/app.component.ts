@@ -37,6 +37,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (this.isBrowser) {
       const isMobile = window.innerWidth < 833;
 
+      const isTablet = window.innerWidth > 833 && window.innerWidth < 1511;
+
       this.swiperConfig = {
         slidesPerView: 3,
         spaceBetween: 0,
