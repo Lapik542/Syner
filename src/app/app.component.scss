@@ -2565,5 +2565,51 @@ line-height: 120%; /* 24px */
 }
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
-  
+  .form-menu {
+    height: 100vh;
+    padding: 28px;
+    gap: 0;
+    border-radius: 0;
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 833px) {
+  .form-menu {
+    height: 100vh;
+    padding: 16px;
+    gap: 0;
+    border-radius: 0;
+    gap: 8px;
+  }
+  .form-menu-header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .form-menu-title {
+    font-size: 24px;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+  .form-title {
+    font-size: 29px;
+  }
+  .input-form {
+    height: 80px;
+    font-size: 13px;
+    padding: 8px;
+  }
+  .title-label {
+    font-size: 20px;
+  }
+  .your-info-input {
+    margin-top: 12px;
+  }
+  .form-button-send {
+    width: 83px;
+    height: 83px;
+    flex-shrink: 0;
+    bottom: 12px;
+  }
 }
