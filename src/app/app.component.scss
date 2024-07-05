@@ -1838,7 +1838,7 @@ text-transform: uppercase;
 
   .animated-arrow img {
     position: absolute;
-    animation: fall 4s infinite;
+    animation: fall 3s infinite;
     width: 76px;
     height: 38px;
   }
@@ -2560,16 +2560,5 @@ line-height: 120%; /* 24px */
     height: 90px;
     right: 50px;
     bottom: 30px;
-  }
-
-  @media screen and (min-width: 834px) and (max-width: 1511px) {
-    .form {
-      display: flex;
-      right: -100%;
-      transition: all 0.3s ease;
-  }
-  .form.is-open {
-    right: 0;
-}
   }
 
