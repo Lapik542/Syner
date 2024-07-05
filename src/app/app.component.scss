@@ -3,6 +3,7 @@
 }
 
 .container {
+  width: 1920px;
   display: flex;
 }
 
@@ -18,6 +19,13 @@
   width: 834px;
   margin: 0 auto;
 }
+}
+
+@media screen and (min-width: 1512px) and (max-width: 1919px) {
+  .container {
+    width: 1512px;
+    margin: 0 auto;
+  }
 }
 
 .nav-menu {
@@ -220,7 +228,7 @@
   border: 1px solid #000;
   margin-top: -14px;
   padding-top: 14px;
-  width: 100%;
+  width: 1822px;
   margin-right: 24px;
   border-top: none;
   margin-left: 74px;
@@ -593,6 +601,15 @@ transition: color 0.5s;
 
 
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
+  .main-text {
+    width: 1400px;
+    margin: 0 auto;
+  }
+  .about-us {
+    width: 1350px;
+    margin: 0 auto;
+
+  }
   .subtitle,
   .great-subtitle {
       font-size: 96px;
@@ -623,6 +640,7 @@ transition: color 0.5s;
       width: 1343px;
   }
   .about-us {
+    width: 1350px;
       gap: 12px;
   }
   .ideas-ignite-block {
@@ -788,6 +806,7 @@ flex-shrink: 0;
 }
 .block-phones {
   padding: 0;
+  margin: 0 auto;
 }
 }
 
@@ -1105,6 +1124,11 @@ line-height: normal;
 
 .services-section {
   margin-top: 100px;
+  padding: 0 28px;
+}
+
+.services-container {
+  margin: 0 auto;
 }
 
 .services-title {
@@ -1117,13 +1141,12 @@ line-height: normal;
   font-weight: 500;
   line-height: 264.96px;
   text-transform: uppercase;
-  margin-left: 28px;
 }
 
 .services-cards-list {
   display: flex;
   gap: 44px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .services-card {
@@ -1328,12 +1351,14 @@ height: 442px;
 }
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
+  .services-section {
+    padding: 0;
+  }
   .services-title {
     margin-top: 60px;
     margin-bottom: 30px;
     font-size: 60px;
     line-height: normal;
-    margin-left: 0;
   }
   .services-cards-list {
     gap: 22px;
@@ -1418,6 +1443,9 @@ height: 442px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 833px) {
+  .services-section {
+    padding: 0;
+  }
 .services-section {
   margin-top: 30px;
 }
@@ -1593,8 +1621,9 @@ canvas {
 
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
   .matter {
-      width: 1343px;
+      width: 100%;
       height: 400px;
+      margin: 0 auto;
   }
 }
 
@@ -1632,7 +1661,6 @@ canvas {
 // PORTFOLIO
 
 .portfolio-section {
-  max-width: 1800px;
   margin-top: 100px;
   padding: 0 32px;
   overflow: hidden;
@@ -1653,6 +1681,7 @@ font-weight: 600;
 line-height: 264.96px; /* 220.8% */
 text-transform: uppercase;
 }
+
 
 .swiper-slide {
   text-align: center;
@@ -1779,6 +1808,7 @@ flex-shrink: 0;
 
 .connect-section {
   padding: 0 32px;
+  width: 100%;
   margin-top: 100px;
 }
 
@@ -1797,9 +1827,8 @@ text-transform: uppercase;
 .connect-btn {
   display: flex;
   justify-content: space-between;
-  gap: 233px;
   align-items: center;
-  width: 1752px;
+  width: 100%;
   height: 106px;
   border-radius: 16px;
   background: #000;
@@ -1942,7 +1971,7 @@ cursor: pointer;
 
 .get-started {
   display: flex;
-  width: 1752px;
+  width: 100%;
   height: 70px;
   padding: 8px 49px;
   justify-content: center;
@@ -1971,10 +2000,10 @@ cursor: pointer;
       font-size: 110px;
   }
   .connect-btn {
-      width: 1343px;
+      width: 100%;
   }
   .connect-text-interest {
-      width: 1343px;
+      width: 100%;
       padding-left: 0;
       padding-right: 0;
   }
@@ -1984,7 +2013,7 @@ cursor: pointer;
       flex-shrink: 0;
   }
   .get-started {
-      width: 1343px;
+      width: 100%;
       padding: 0;
       margin-top: 32px;
   }
@@ -2225,7 +2254,7 @@ cursor: pointer;
 
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
   .footer-block-get-started {
-      width: 1343px;
+      width: 100%;
       height: 610px;
   }
   .footer-get-started-block-button {
