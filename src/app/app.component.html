@@ -37,8 +37,8 @@
    <!-- MAIN -->
   <main class="main">
     <div>
-      <section class="main-text-img"
-      id="home">
+      <div class="main-text">
+      <section class="main-text-img" id="home">
         <h1 class="title">synertech</h1>
         <h2 class="subtitle">let` s make something</h2>
         <h2 class="subtitle">
@@ -51,6 +51,7 @@
         <p class="main-text-building">Building Up Communities, Careers & Enterprises Worldwide</p>
         <button class="button-get-started" (click)="scrollToSection('contact')">get started</button>
       </div>
+    </div>
       <!-- HELLO -->
       <section id="hello" class="block-phones">
         <img class="phones-img" src="../assets/main-phone-photo.png" alt="Phones">
@@ -73,6 +74,7 @@
       </section>
       <!-- SERVICES -->
       <section id="services" class="services-section">
+        <div class="services-container">
         <h2 class="services-title">Services</h2>
         <div class="services-cards-list">
           <div class="services-card">
@@ -112,6 +114,7 @@
             </button>
           </div>
         </div>
+      </div>
       </section>
       <!-- MATTER -->
       <section id="matter" class="matter-section">
@@ -132,6 +135,7 @@
       </section>
       <!-- PORTFOLIO -->
       <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-container">
         <div class="portfolio">
           <h2 class="portfolio-title">Portfolio</h2>
           <swiper
@@ -214,6 +218,7 @@
             [ngClass]="{'active': activeSlideIndex === 4}"
           ></div>
         </div>
+      </div>
       </section>
 
       <section id="contact" class="connect-section">

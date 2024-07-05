@@ -54,7 +54,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       this.portfolioSwiperConfig = {
         slidesPerView: isMobile ? 1 : 3,
-        spaceBetween: 40,
+        spaceBetween: 10,
         pagination: { clickable: true },
         breakpoints: {
           833: { slidesPerView: 3 },
