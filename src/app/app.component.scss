@@ -282,6 +282,7 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 text-transform: uppercase;
+margin-right: 16px;
 
 }
 
@@ -605,6 +606,7 @@ transition: color 0.5s;
   .subtitle,
   .great-subtitle {
       font-size: 96px;
+      margin-right: 16px;
   }
   .icon-black-circle {
       width: 65px;
@@ -771,6 +773,7 @@ flex-shrink: 0;
 .great-subtitle {
     font-size: 60px;
     margin: 0;
+    margin-right: 8px;
 }
 .icon-black-circle {
   width: 45px;
