@@ -17,25 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
   engine.world.gravity.y = 3; // Increase this value to make gravity stronger
 
   // Constants for container dimensions
-  var containerWidth = 1850;
-  if (window.innerWidth < 1919 && window.innerWidth > 1511) {
-      containerWidth = 1435;
-  }
+  var containerWidth = window.innerWidth * 1.01;
   var containerHeight = 439;
+
   if (window.innerWidth < 1919 && window.innerWidth > 1511) {
       containerHeight = 400;
   }
 
   if (window.innerWidth < 1511 && window.innerWidth > 833) {
-      containerWidth = 770;
-  }
-  if (window.innerWidth < 1511 && window.innerWidth > 833) {
       containerHeight = 400;
   }
 
-  if (window.innerWidth < 833) {
-      containerWidth = 300;
-  }
   if (window.innerWidth < 833) {
       containerHeight = 450;
   }
