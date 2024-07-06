@@ -1613,7 +1613,10 @@ top: 80px;
 
 .draggable {
   position: absolute !important;
+  user-select: none;
+  cursor: pointer;
 }
+
 
 #matterCanvas {
   width: 100% !important;

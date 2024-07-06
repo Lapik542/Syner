@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       world = engine.world;
 
   // Set stronger gravity
-  engine.world.gravity.y = 3; // Increase this value to make gravity stronger
+  engine.world.gravity.y = 3;
 
   // Constants for container dimensions
   var containerWidth = window.innerWidth * 1.01;
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
       el.style.position = 'absolute';
       el.style.left = `${randomX}px`;
       el.style.top = `${randomY}px`;
-      el.style.userSelect = 'none'; // prevent text selection
-      el.style.cursor = 'pointer'; // dragging cursor
+      el.style.userSelect = 'none';
+      el.style.cursor = 'pointer';
 
       // prevent text selection on mouse down and touch start
       el.addEventListener('mousedown', onMouseDown);
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
           el.style.position = 'absolute';
           el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
           el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-          el.style.zIndex = ''; // Restore z-index
+          el.style.zIndex = '';
           el.isDragging = false;
 
           // Re-enable physics on the body
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   el.style.position = 'absolute';
                   el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
                   el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-                  el.style.zIndex = ''; // Restore z-index
+                  el.style.zIndex = '';
                   el.isDragging = false;
 
                   // Re-enable physics on the body
