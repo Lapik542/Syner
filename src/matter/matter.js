@@ -254,4 +254,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('mouseup', endDrag);
   document.addEventListener('touchend', endDrag);
+
+  // Ensure absolute positioning on page load for mobile and tablet
+  function ensureAbsolutePositioning() {
+      draggableBodies.forEach(function(item) {
+          var el = item.element;
+          el.style.position = 'absolute';
+      });
+  }
+
+  ensureAbsolutePositioning();
+  window.addEventListener('resize', ensureAbsolutePositioning);
 });
