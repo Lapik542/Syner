@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       world = engine.world;
 
   // Set stronger gravity
-  engine.world.gravity.y = 3;
+  engine.world.gravity.y = 3; // Increase this value to make gravity stronger
 
   // Constants for container dimensions
   var containerWidth = window.innerWidth * 1.01;
@@ -61,6 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // get all draggable elements
   var draggableElements = Array.from(document.querySelectorAll('.draggable'));
 
+  // function to set element to absolute
+  function setElementToAbsolute(el, randomX, randomY) {
+      el.style.position = 'absolute';
+      el.style.left = `${randomX}px`;
+      el.style.top = `${randomY}px`;
+      el.style.userSelect = 'none'; // prevent text selection
+      el.style.cursor = 'pointer'; // dragging cursor
+  }
+
   // create bodies for each draggable element
   draggableElements.forEach(function(el, index) {
       var rect = el.getBoundingClientRect();
@@ -83,11 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
       );
 
       // make the element draggable
-      el.style.position = 'absolute';
-      el.style.left = `${randomX}px`;
-      el.style.top = `${randomY}px`;
-      el.style.userSelect = 'none';
-      el.style.cursor = 'pointer';
+      setElementToAbsolute(el, randomX, randomY);
 
       // prevent text selection on mouse down and touch start
       el.addEventListener('mousedown', onMouseDown);
@@ -170,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
           el.style.position = 'absolute';
           el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
           el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-          el.style.zIndex = '';
+          el.style.zIndex = ''; // Restore z-index
           el.isDragging = false;
 
           // Re-enable physics on the body
@@ -242,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   el.style.position = 'absolute';
                   el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
                   el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-                  el.style.zIndex = '';
+                  el.style.zIndex = ''; // Restore z-index
                   el.isDragging = false;
 
                   // Re-enable physics on the body
@@ -255,11 +260,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('mouseup', endDrag);
   document.addEventListener('touchend', endDrag);
 
-  // Ensure absolute positioning on page load for mobile and tablet
+  // Ensure absolute positioning on page load and resize
   function ensureAbsolutePositioning() {
       draggableBodies.forEach(function(item) {
           var el = item.element;
-          el.style.position = 'absolute';
+          var body = item.body;
+          setElementToAbsolute(el, body.position.x - el.offsetWidth / 2, body.position.y - el.offsetHeight / 2);
       });
   }
 
