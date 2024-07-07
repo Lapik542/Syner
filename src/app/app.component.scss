@@ -2610,6 +2610,9 @@ line-height: 120%; /* 24px */
   .form-button-send {
     top: 680px;
   }
+  .input-form {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 833px) {
@@ -2634,8 +2637,8 @@ line-height: 120%; /* 24px */
     font-size: 29px;
   }
   .input-form {
-    height: 80px;
-    font-size: 13px;
+    height: 76%;
+    font-size: 18px;
     padding: 8px;
   }
   .title-label {
@@ -2649,6 +2652,6 @@ line-height: 120%; /* 24px */
     height: 83px;
     flex-shrink: 0;
     right: 34px;
-    top : 572px;
+    top : 522px;
   }
 }
