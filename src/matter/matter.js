@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
       MouseConstraint = Matter.MouseConstraint,
       Mouse = Matter.Mouse;
 
-  // create engine
+  // створення двигуна
   var engine = Engine.create(),
       world = engine.world;
 
-  // Set stronger gravity
-  engine.world.gravity.y = 3; // Increase this value to make gravity stronger
+  // Встановлення сильнішої гравітації
+  engine.world.gravity.y = 3; // Збільште це значення, щоб зробити гравітацію сильнішою
 
-  // Constants for container dimensions
+  // Константи для розмірів контейнера
   var containerWidth = window.innerWidth * 1.01;
   var containerHeight = 439;
 
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
       containerHeight = 450;
   }
 
-  // get the matter container
+  // отримання контейнера Matter
   var matterContainer = document.querySelector('.matter');
   var matterRect = matterContainer.getBoundingClientRect();
 
-  // create renderer
+  // створення рендерера
   var render = Render.create({
       element: matterContainer,
       engine: engine,
@@ -51,26 +51,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   Render.run(render);
 
-  // create runner
+  // створення ранера
   var runner = Runner.create();
   Runner.run(runner, engine);
 
-  // create an empty array to store draggable bodies
+  // створення порожнього масиву для зберігання тіл, які можна перетягувати
   var draggableBodies = [];
 
-  // get all draggable elements
+  // отримання всіх перетягуваних елементів
   var draggableElements = Array.from(document.querySelectorAll('.draggable'));
 
-  // function to set element to absolute
+  // функція для встановлення позиції елемента на абсолютну
   function setElementToAbsolute(el, randomX, randomY) {
       el.style.position = 'absolute';
       el.style.left = `${randomX}px`;
       el.style.top = `${randomY}px`;
-      el.style.userSelect = 'none'; // prevent text selection
-      el.style.cursor = 'pointer'; // dragging cursor
+      el.style.userSelect = 'none'; // запобігає вибору тексту
+      el.style.cursor = 'pointer'; // курсор перетягування
   }
 
-  // create bodies for each draggable element
+  // створення тіл для кожного перетягуваного елемента
   draggableElements.forEach(function(el, index) {
       var rect = el.getBoundingClientRect();
       var randomX = Math.random() * (containerWidth - rect.width);
@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       );
 
-      // make the element draggable
+      // робимо елемент перетягуваним
       setElementToAbsolute(el, randomX, randomY);
 
-      // prevent text selection on mouse down and touch start
+      // запобігаємо вибору тексту при натисканні миші та дотику
       el.addEventListener('mousedown', onMouseDown);
       el.addEventListener('touchstart', onTouchStart, { passive: false });
 
@@ -110,20 +110,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       function startDrag(clientX, clientY) {
-          // Set dragging flag to this element
+          // Встановлюємо прапорець перетягування для цього елемента
           el.isDragging = true;
-          // Disable gravity on the body being dragged for smoother movement
+          // Вимкнути гравітацію на перетягуваному тілі для плавного руху
           body.isStatic = true;
-          // Store initial position offset relative to window
+          // Зберігаємо відсоток початкового положення відносно вікна
           el.dragStartX = clientX;
           el.dragStartY = clientY;
-          // Store initial body position
+          // Зберігаємо початкове положення тіла
           el.bodyStartX = body.position.x;
           el.bodyStartY = body.position.y;
-          // Bring element to front
+          // Підняти елемент вгору
           el.style.zIndex = 1000;
 
-          // add mouse move and touch move listeners on document
+          // додати слухачів руху миші та дотику на документ
           document.addEventListener('mousemove', onMouseMove);
           document.addEventListener('touchmove', onTouchMove, { passive: false });
       }
@@ -147,14 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
           var newX = el.bodyStartX + deltaX;
           var newY = el.bodyStartY + deltaY;
 
-          // Constrain newX and newY within container bounds
+          // Обмежуємо newX та newY в межах контейнера
           newX = Math.max(Math.min(newX, containerWidth - rect.width), 0);
           newY = Math.max(Math.min(newY, containerHeight - rect.height), 0);
 
           Body.setPosition(body, { x: newX, y: newY });
       }
 
-      // handle mouse up and touch end on document
+      // обробник mouseup та touchend на документі
       document.addEventListener('mouseup', onMouseUp);
       document.addEventListener('touchend', onTouchEnd);
 
@@ -171,29 +171,29 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       function endDrag() {
-          // Restore absolute position
+          // Відновлюємо абсолютну позицію
           el.style.position = 'absolute';
           el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
           el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-          el.style.zIndex = ''; // Restore z-index
+          el.style.zIndex = ''; // Відновлюємо z-index
           el.isDragging = false;
 
-          // Re-enable physics on the body
+          // Відновлюємо фізику для тіла
           body.isStatic = false;
 
-          // remove mouse move and touch move listeners from document
+          // видаляємо слухачів руху миші та дотику з документа
           document.removeEventListener('mousemove', onMouseMove);
           document.removeEventListener('touchmove', onTouchMove);
       }
 
-      // add body to world
+      // додати тіло в світ
       Composite.add(world, body);
 
-      // store the body and element in draggableBodies array
+      // зберегти тіло та елемент у масив draggableBodies
       draggableBodies.push({ body: body, element: el });
   });
 
-  // add walls (to contain the elements within the container)
+  // додавання стін (щоб утримувати елементи у межах контейнера)
   var ground = Bodies.rectangle(containerWidth / 2, containerHeight + 30, containerWidth, 60, { isStatic: true });
   var leftWall = Bodies.rectangle(-30, containerHeight / 2, 60, containerHeight, { isStatic: true });
   var rightWall = Bodies.rectangle(containerWidth + 30, containerHeight / 2, 60, containerHeight, { isStatic: true });
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   Composite.add(world, [ground, leftWall, rightWall, ceiling]);
 
-  // add mouse control
+  // додавання керування мишею
   var mouse = Mouse.create(render.canvas),
       mouseConstraint = MouseConstraint.create(engine, {
           mouse: mouse,
@@ -215,44 +215,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
   Composite.add(world, mouseConstraint);
 
-  // keep the mouse in sync with rendering
+  // синхронізація миші з рендером
   render.mouse = mouse;
 
-  // update the positions of the div elements
+  // оновлення позицій div елементів
   Matter.Events.on(engine, 'afterUpdate', function() {
       draggableBodies.forEach(function(item) {
           var body = item.body;
           var el = item.element;
 
-          // Update element position and rotation
+          // Оновити позицію елемента та його обертання
           el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
           el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
           el.style.transform = `rotate(${body.angle}rad)`;
       });
   });
 
-  // fit the render viewport to the scene
+  // налаштування видимості рендера до сцени
   Render.lookAt(render, Composite.allBodies(world));
 
-  // Event listener for mouseup and touchend to end dragging
+  // слухач для mouseup та touchend для завершення перетягування
   function endDrag(event) {
-      // End dragging for all elements
+      // Закінчити перетягування для всіх елементів
       draggableBodies.forEach(function(item) {
           var body = item.body;
           var el = item.element;
 
           if (el.isDragging) {
-              // Restore absolute position
+              // Відновлюємо абсолютну позицію
               setTimeout(function() {
                   el.style.position = 'absolute';
                   el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
                   el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
-                  el.style.zIndex = ''; // Restore z-index
+                  el.style.zIndex = ''; // Відновлюємо z-index
                   el.isDragging = false;
 
-                  // Re-enable physics on the body
+                  // Відновлюємо фізику для тіла
                   body.isStatic = false;
-              }, 0); // setTimeout with 0 delay to ensure it runs after current event loop
+              }, 0); // setTimeout з затримкою 0 для виконання після поточного циклу подій
           }
       });
   }
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('mouseup', endDrag);
   document.addEventListener('touchend', endDrag);
 
-  // Ensure absolute positioning on page load and resize
+  // Забезпечення абсолютного позиціювання при завантаженні сторінки та зміні розміру
   function ensureAbsolutePositioning() {
       draggableBodies.forEach(function(item) {
           var el = item.element;
