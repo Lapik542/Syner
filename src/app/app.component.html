@@ -6,7 +6,7 @@
       <li class="nav-list" [class.active]="currentSection === 'hello'" (click)="scrollToSection('hello')"><a class="nav-link">Hello</a></li>
       <li class="nav-list" [class.active]="currentSection === 'services'" (click)="scrollToSection('services')"><a class="nav-link">Services</a></li>
       <li class="nav-list" [class.active]="currentSection === 'portfolio'" (click)="scrollToSection('portfolio')"><a class="nav-link">Portfolio</a></li>
-      <li class="nav-list" [class.active]="currentSection === 'contact'" (click)="scrollToSection('contact')"><a class="nav-link">Contact</a></li>
+      <li class="nav-list" [class.active]="currentSection === 'contact'" (click)="scrollToSection('contact')"><a class="nav-link">Connect</a></li>
     </ul>
   </nav>
 
@@ -27,7 +27,7 @@
         <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'portfolio'" (click)="setActiveSection('portfolio')">Portfolio</a>
       </ng-template>
       <ng-template swiperSlide>
-        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')">Contact</a>
+        <a class="link-photo-swiper link-spacing" [class.active]="currentSection === 'contact'" (click)="setActiveSection('contact')">Connect</a>
       </ng-template>
     </swiper>
   </div>
