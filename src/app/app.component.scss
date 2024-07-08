@@ -872,6 +872,9 @@ flex-shrink: 0;
   padding: 0;
   margin-top: 80px;
 }
+.phones-img {
+  height: 512px;
+}
 .button-get-started {
   left: 170px;
   top: 60px;
@@ -889,7 +892,7 @@ flex-shrink: 0;
   margin-top: 30px;
 }
 .about-us {
-  width: 288px;
+  width: 290px;
   margin: 0 auto;
   gap: 4px;
 }
@@ -929,7 +932,7 @@ flex-shrink: 0;
   font-size: 13px;
   display: flex;
 width: 288px;
-height: 40px;
+height: 30px;
 padding: 24.844px 12.348px;
 justify-content: center;
 align-items: center;
@@ -1977,7 +1980,7 @@ cursor: pointer;
 }
 
 .img-click-text {
-  color: #FBFF36;
+  color: black;
   font-family: "Crique Grotesk";
   font-size: 40px;
   font-style: normal;
@@ -2412,7 +2415,7 @@ flex-shrink: 0;
 padding: 32px;
   position: relative;
   width: 1051px;
-  height: 931px;
+  height: 1031px;
   border-radius: 16px;
   background: #D4D0C2;
   display: flex;
@@ -2493,7 +2496,7 @@ margin-bottom: 24px;
 font-family: "Crique Grotesk";
 padding: 10px 20px;
 color: #000;
-font-size: 20px;
+font-size: 24px;
 width: 100%;
 resize: none;
 height: 246px;
@@ -2529,7 +2532,7 @@ height: 116px;
 flex-shrink: 0;
 background-color: #FCFF62;
 right: 100px;
-top: 630px;
+top: 930px;
 transition: all 0.3s ease;
 }
 
@@ -2597,7 +2600,7 @@ line-height: 120%; /* 24px */
   width: 90px;
   height: 90px;
   right: 50px;
-  top: 640px;
+  top: 650px;
 }
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
