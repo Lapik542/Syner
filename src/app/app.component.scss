@@ -2202,7 +2202,6 @@ cursor: pointer;
 // FOOTER
 
 .footer-block-get-started {
-
   padding: 0 34px;
   height: 630px;
   flex-shrink: 0;
@@ -2365,8 +2364,6 @@ cursor: pointer;
 height: 99px;
 flex-shrink: 0;
 }
-.footer-reserved-privacy {
-}
 .footer-reserved {
   font-size: 14px;
 }
@@ -2401,6 +2398,7 @@ flex-shrink: 0;
   font-size: 13px;
 }
 .footer-get-started-block-button {
+  border: 1px solid #7A7A7A;
   display: flex;
   flex-direction: column;
   align-items: end;
