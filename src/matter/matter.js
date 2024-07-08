@@ -95,13 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       setElementToAbsolute(el, randomX, randomY);
 
       // запобігаємо вибору тексту при натисканні миші та дотику
-      el.addEventListener('mousedown', onMouseDown);
       el.addEventListener('touchstart', onTouchStart, { passive: false });
-
-      function onMouseDown(event) {
-          event.preventDefault();
-          startDrag(event.clientX, event.clientY);
-      }
 
       function onTouchStart(event) {
           event.preventDefault();
@@ -124,14 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
           el.style.zIndex = 1000;
 
           // додати слухачів руху миші та дотику на документ
-          document.addEventListener('mousemove', onMouseMove);
           document.addEventListener('touchmove', onTouchMove, { passive: false });
-      }
-
-      function onMouseMove(event) {
-          if (el.isDragging) {
-              moveElement(event.clientX, event.clientY);
-          }
       }
 
       function onTouchMove(event) {
@@ -154,15 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
           Body.setPosition(body, { x: newX, y: newY });
       }
 
-      // обробник mouseup та touchend на документі
-      document.addEventListener('mouseup', onMouseUp);
+      // обробник touchend на документі
       document.addEventListener('touchend', onTouchEnd);
-
-      function onMouseUp(event) {
-          if (el.isDragging) {
-              endDrag();
-          }
-      }
 
       function onTouchEnd(event) {
           if (el.isDragging) {
@@ -181,8 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Відновлюємо фізику для тіла
           body.isStatic = false;
 
-          // видаляємо слухачів руху миші та дотику з документа
-          document.removeEventListener('mousemove', onMouseMove);
+          // видаляємо слухача руху тач на документі
           document.removeEventListener('touchmove', onTouchMove);
       }
 
@@ -234,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // налаштування видимості рендера до сцени
   Render.lookAt(render, Composite.allBodies(world));
 
-  // слухач для mouseup та touchend для завершення перетягування
+  // слухач для touchend для завершення перетягування
   function endDrag(event) {
       // Закінчити перетягування для всіх елементів
       draggableBodies.forEach(function(item) {
@@ -257,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  document.addEventListener('mouseup', endDrag);
   document.addEventListener('touchend', endDrag);
 
   // Забезпечення абсолютного позиціювання при завантаженні сторінки та зміні розміру
