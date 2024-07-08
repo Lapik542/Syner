@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // prevent text selection on mouse down and touch start
       el.addEventListener('mousedown', onMouseDown);
-      el.addEventListener('touchstart', onTouchStart);
+      el.addEventListener('touchstart', onTouchStart, { passive: false });
 
       function onMouseDown(event) {
           event.preventDefault();
