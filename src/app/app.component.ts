@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
+import * as Matter from 'matter-js';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -69,6 +71,230 @@ export class AppComponent implements OnInit, AfterViewInit {
         },
       };
     }
+
+    // MATTER
+    document.addEventListener('DOMContentLoaded', function() {
+      const Matter = (window as any).Matter,
+            Engine = Matter.Engine,
+            Render = Matter.Render,
+            Runner = Matter.Runner,
+            Body = Matter.Body,
+            Composite = Matter.Composite,
+            Bodies = Matter.Bodies,
+            MouseConstraint = Matter.MouseConstraint,
+            Mouse = Matter.Mouse;
+
+      const engine = Engine.create(),
+            world = engine.world;
+
+      engine.world.gravity.y = 4;
+
+      let containerWidth = window.innerWidth * 1.01;
+      let containerHeight = 439;
+
+      if (window.innerWidth < 1919 && window.innerWidth > 1511) {
+          containerHeight = 400;
+      }
+
+      if (window.innerWidth < 1511 && window.innerWidth > 833) {
+          containerHeight = 400;
+      }
+
+      if (window.innerWidth < 833) {
+          containerHeight = 450;
+      }
+
+      const matterContainer = document.querySelector('.matter') as HTMLElement;
+      const matterRect = matterContainer.getBoundingClientRect();
+
+      const render = Render.create({
+          element: matterContainer,
+          engine: engine,
+          canvas: document.getElementById('matterCanvas') as HTMLCanvasElement,
+          options: {
+              width: containerWidth,
+              height: containerHeight,
+              wireframes: false,
+              background: 'transparent'
+          }
+      });
+
+      Render.run(render);
+
+      const runner = Runner.create();
+      Runner.run(runner, engine);
+
+      const draggableBodies: { body: Matter.Body, element: HTMLElement }[] = [];
+      const draggableElements = Array.from(document.querySelectorAll('.draggable')) as HTMLElement[];
+
+      function setElementToAbsolute(el: HTMLElement, randomX: number, randomY: number) {
+          el.style.position = 'absolute';
+          el.style.left = `${randomX}px`;
+          el.style.top = `${randomY}px`;
+          el.style.userSelect = 'none';
+          el.style.cursor = 'pointer';
+      }
+
+      draggableElements.forEach(function(el) {
+          const rect = el.getBoundingClientRect();
+          const randomX = Math.random() * (containerWidth - rect.width);
+          const randomY = Math.random() * (containerHeight - rect.height);
+
+          const body = Bodies.rectangle(
+              randomX,
+              randomY,
+              rect.width,
+              rect.height,
+              {
+                  isStatic: false,
+                  render: {
+                      fillStyle: el.classList.contains('background-1') ? '#000' : 'transparent',
+                      strokeStyle: '#000',
+                      lineWidth: 1
+                  }
+              }
+          );
+
+          setElementToAbsolute(el, randomX, randomY);
+
+          el.addEventListener('mousedown', onMouseDown);
+          el.addEventListener('touchstart', onTouchStart, { passive: false });
+
+          function onMouseDown(event: MouseEvent) {
+              event.preventDefault();
+              startDrag(event.clientX, event.clientY);
+          }
+
+          function onTouchStart(event: TouchEvent) {
+              event.preventDefault();
+              const touch = event.touches[0];
+              startDrag(touch.clientX, touch.clientY);
+          }
+
+          function startDrag(clientX: number, clientY: number) {
+              (el as any).isDragging = true;
+              body.isStatic = true;
+              (el as any).dragStartX = clientX;
+              (el as any).dragStartY = clientY;
+              (el as any).bodyStartX = body.position.x;
+              (el as any).bodyStartY = body.position.y;
+              el.style.zIndex = '1000';
+
+              document.addEventListener('mousemove', onMouseMove);
+              document.addEventListener('touchmove', onTouchMove, { passive: false });
+          }
+
+          function onMouseMove(event: MouseEvent) {
+              if ((el as any).isDragging) {
+                  moveElement(event.clientX, event.clientY);
+              }
+          }
+
+          function onTouchMove(event: TouchEvent) {
+              if ((el as any).isDragging) {
+                  const touch = event.touches[0];
+                  moveElement(touch.clientX, touch.clientY);
+              }
+          }
+
+          function moveElement(clientX: number, clientY: number) {
+              const deltaX = clientX - (el as any).dragStartX;
+              const deltaY = clientY - (el as any).dragStartY;
+              let newX = (el as any).bodyStartX + deltaX;
+              let newY = (el as any).bodyStartY + deltaY;
+
+              newX = Math.max(Math.min(newX, containerWidth - rect.width), 0);
+              newY = Math.max(Math.min(newY, containerHeight - rect.height), 0);
+
+              Body.setPosition(body, { x: newX, y: newY });
+          }
+
+          document.addEventListener('mouseup', onMouseUp);
+          document.addEventListener('touchend', onTouchEnd);
+
+          function onMouseUp() {
+              if ((el as any).isDragging) {
+                  endDrag();
+              }
+          }
+
+          function onTouchEnd() {
+              if ((el as any).isDragging) {
+                  endDrag();
+              }
+          }
+
+          function endDrag() {
+              el.style.position = 'absolute';
+              el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
+              el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
+              el.style.zIndex = '';
+              (el as any).isDragging = false;
+
+              body.isStatic = false;
+
+              document.removeEventListener('mousemove', onMouseMove);
+              document.removeEventListener('touchmove', onTouchMove);
+          }
+
+          Composite.add(world, body);
+          draggableBodies.push({ body: body, element: el });
+      });
+
+      const ground = Bodies.rectangle(containerWidth / 2, containerHeight + 30, containerWidth, 60, { isStatic: true });
+      const leftWall = Bodies.rectangle(-30, containerHeight / 2, 60, containerHeight, { isStatic: true });
+      const rightWall = Bodies.rectangle(containerWidth + 30, containerHeight / 2, 60, containerHeight, { isStatic: true });
+      const ceiling = Bodies.rectangle(containerWidth / 2, -30, containerWidth, 60, { isStatic: true });
+
+      Composite.add(world, [ground, leftWall, rightWall, ceiling]);
+
+      const mouse = Mouse.create(render.canvas),
+            mouseConstraint = MouseConstraint.create(engine, {
+                mouse: mouse,
+                constraint: {
+                    stiffness: 0.2,
+                    render: {
+                        visible: false
+                    }
+                }
+            });
+
+      Composite.add(world, mouseConstraint);
+      render.mouse = mouse;
+
+      Matter.Events.on(engine, 'afterUpdate', function() {
+          draggableBodies.forEach(function(item) {
+              const body = item.body;
+              const el = item.element;
+
+              el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
+              el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
+              el.style.transform = `rotate(${body.angle}rad)`;
+          });
+      });
+
+      Render.lookAt(render, Composite.allBodies(world));
+
+      function endDrag() {
+          draggableBodies.forEach(function(item) {
+              const body = item.body;
+              const el = item.element;
+
+              if ((el as any).isDragging) {
+                  setTimeout(function() {
+                      el.style.left = `${body.position.x - el.offsetWidth / 2}px`;
+                      el.style.top = `${body.position.y - el.offsetHeight / 2}px`;
+                      el.style.transform = `rotate(${body.angle}rad)`;
+                      (el as any).isDragging = false;
+                  }, 0);
+              }
+          });
+      }
+
+      document.addEventListener('mouseup', endDrag);
+      document.addEventListener('touchend', endDrag);
+    });
+    // MATTER
   }
 
   ngAfterViewInit() {
