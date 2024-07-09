@@ -82,7 +82,7 @@ export class MatterComponent implements OnInit {
         setElementToAbsolute(el, randomX, randomY);
 
         el.addEventListener('mousedown', (event) => startDrag(event, el, body, containerWidth, containerHeight));
-        el.addEventListener('touchstart', (event) => startDrag(event, el, body, containerWidth, containerHeight), { passive: false });
+        el.addEventListener('touchstart', (event) => startDrag(event, el, body, containerWidth, containerHeight));
 
         Composite.add(world, body);
         draggableBodies.push({ body: body, element: el });
@@ -122,8 +122,8 @@ export class MatterComponent implements OnInit {
 
       function startDrag(event: MouseEvent | TouchEvent, el: HTMLElement, body: Matter.Body, containerWidth: number, containerHeight: number) {
           event.preventDefault();
-          const clientX = (event as MouseEvent).clientX || (event as TouchEvent).touches[0].clientX;
-          const clientY = (event as MouseEvent).clientY || (event as TouchEvent).touches[0].clientY;
+          const clientX = ('touches' in event) ? event.touches[0].clientX : event.clientX;
+          const clientY = ('touches' in event) ? event.touches[0].clientY : event.clientY;
 
           el.style.position = 'absolute';
           el.style.userSelect = 'none';
@@ -161,8 +161,8 @@ export class MatterComponent implements OnInit {
       }
 
       function moveElement(event: MouseEvent | TouchEvent, el: HTMLElement, body: Matter.Body, containerWidth: number, containerHeight: number) {
-          const clientX = (event as MouseEvent).clientX || (event as TouchEvent).touches[0].clientX;
-          const clientY = (event as MouseEvent).clientY || (event as TouchEvent).touches[0].clientY;
+          const clientX = ('touches' in event) ? event.touches[0].clientX : event.clientX;
+          const clientY = ('touches' in event) ? event.touches[0].clientY : event.clientY;
 
           const deltaX = clientX - (el as any).dragStartX;
           const deltaY = clientY - (el as any).dragStartY;

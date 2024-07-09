@@ -8,7 +8,6 @@ import { SwiperModule } from 'swiper/angular/angular/src/public-api';
 
 @NgModule({
   declarations: [
-    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,6 @@ import { SwiperModule } from 'swiper/angular/angular/src/public-api';
     AppComponent
   ],
   bootstrap: [
-    AppComponent
   ]
 })
 export class AppModule { }
