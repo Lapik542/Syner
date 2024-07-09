@@ -1,5 +1,3 @@
-// matter.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import Matter from 'matter-js';
 
