@@ -8,5 +8,3 @@ import { MatterComponent } from './matter.component';
   exports: [MatterComponent]
 })
 export class MatterModule { }
-export { MatterComponent };
-

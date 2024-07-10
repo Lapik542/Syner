@@ -81,7 +81,7 @@ export class MatterComponent implements OnInit {
         setElementToAbsolute(el, randomX, randomY);
 
         el.addEventListener('mousedown', (event) => startDrag(event, el, body, containerWidth, containerHeight));
-        el.addEventListener('touchstart', (event) => startDrag(event, el, body, containerWidth, containerHeight));
+        el.addEventListener('touchstart', (event) => startDrag(event, el, body, containerWidth, containerHeight), { passive: false });
 
         Composite.add(world, body);
         draggableBodies.push({ body: body, element: el });

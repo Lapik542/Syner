@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 
-import { MatterComponent } from "./matter/matter.module";
 import { MatterModule } from "./matter/matter.module";
 
 @Component({
