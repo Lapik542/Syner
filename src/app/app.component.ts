@@ -39,7 +39,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (this.isBrowser) {
       const isMobile = window.innerWidth < 833;
-
       const isTablet = window.innerWidth > 833 && window.innerWidth < 1511;
 
       this.swiperConfig = {
@@ -83,7 +82,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     }
   }
-
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
