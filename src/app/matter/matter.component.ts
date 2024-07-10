@@ -21,7 +21,7 @@ export class MatterComponent implements OnInit {
 
       const engine = Engine.create();
       const world = engine.world;
-      engine.world.gravity.y = 4;
+      engine.world.gravity.y = 1;
 
       let containerWidth = window.innerWidth * 1.01;
       let containerHeight = 439;
@@ -52,7 +52,6 @@ export class MatterComponent implements OnInit {
           }
       });
 
-      Render.run(render);
       const runner = Runner.create();
       Runner.run(runner, engine);
 
