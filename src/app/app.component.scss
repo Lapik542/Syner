@@ -619,7 +619,7 @@ transition: color 0.5s;
       width: 306px;
       height: 209px;
       flex-shrink: 0;
-      left: 1024px;
+      left: 1034px;
       top: 150px;
   }
   .main-text-building {
@@ -628,9 +628,10 @@ transition: color 0.5s;
   }
   .button-get-started {
       right: 470px;
+      top: 80px;
   }
   .button-get-started:hover {
-      top: -10px;
+      top: 20px;
   }
   .phones-img {
     height: 709px;
@@ -880,7 +881,7 @@ flex-shrink: 0;
 }
 .button-get-started {
   left: 170px;
-  top: 60px;
+  top: 100px;
   width: 113px;
   height: 113px;
   flex-shrink: 0;
@@ -1584,18 +1585,18 @@ margin-top: auto;
 z-index: 100;
 }
 .cards-img-figure {
-top: 86px;
-left: 0;
+top: 100px;
+left: 26px;
 right: 0;
-height: 120px;
-width: 290px;
+height: 90px;
+width: 240px;
 }
 .cards-img-snail {
-  left: 0;
+  left: 40px;
   right: 0;
-height: 120px;
-width: 100%;
-top: 86px;
+height: 80px;
+width: 220px;
+top: 106px;
 }
 }
 
@@ -1704,14 +1705,16 @@ text-transform: uppercase;
 }
 .swiper-slide {
   width: 100%;
-height: 100%;
-flex-shrink: 0;
+  height: 100%;
 margin-left: 0;
 }
 .portfolio-card {
   width: 100%;
 height: 100%;
-flex-shrink: 0;
+}
+.iphone-cards{
+  width: 100%;
+  height: 100%;
 }
 .swiper {
   gap: 20px;
@@ -1880,20 +1883,21 @@ text-transform: uppercase;
 
 .list-click-block {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 16px;
   margin-top: 16px;
 }
 
 .img-click-block {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-height: 281px;
-width: 32%;
+  padding: 0 50px;
+height: 170px;
 flex-shrink: 0;
 border-radius: 16px;
 border: 1px solid #000;
+background-color: #000;
 mix-blend-mode: darken;
 cursor: pointer;
 }
@@ -1902,9 +1906,28 @@ cursor: pointer;
   transition: transform 0.3s ease;
 }
 
+.marketing-text,
+.design-text,
+.development-text {
+  color: #000;
+  font-family: "Cy-Grotesk";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  transition: all 0.4s ease;
+  display: flex;
+  gap: 16px;
+}
+
 .img-click-block:hover {
   & .img-click-text {
     color: #FBFF36;
+  }
+  & .marketing-text,
+  & .design-text,
+  & .development-text {
+    color: #D4D0C2;
   }
 }
 
@@ -1913,7 +1936,7 @@ cursor: pointer;
 }
 
 .img-click-text {
-  color: black;
+  color: #fff;
   font-family: "Nekst";
   font-size: 40px;
   font-style: normal;
@@ -1958,13 +1981,19 @@ cursor: pointer;
       padding-right: 0;
   }
   .img-click-block {
-      height: 210px;
+      height: 140px;
       flex-shrink: 0;
   }
   .get-started {
       padding: 0;
-      margin-top: 32px;
+      margin-top: 18px;
   }
+
+  .marketing-text,
+  .design-text,
+  .development-text {
+  gap: 16px;
+}
 }
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
@@ -2002,8 +2031,14 @@ cursor: pointer;
     line-height: normal;
   }
   .img-click-block {
-    width: 30%;
-    height: 163px;
+    padding: 0 16px;
+    height: 100px;
+  }
+  .development-text,
+  .marketing-text,
+  .design-text {
+    font-size: 20px;
+    gap: 12px;
   }
   .img-click-text{
     font-size: 24px;
@@ -2061,22 +2096,28 @@ cursor: pointer;
 }
 .list-click-block {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 16px;
 }
 .img-click-img {
   display: none;
 }
 .img-click-block {
+  padding: 0 12px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
-  height: 62px;
+  height: 100px;
   flex-shrink: 0;
   border-radius: 16px;
   background: #000;
+}
+.development-text,
+.design-text,
+.marketing-text {
+  font-size: 14px;
+  margin-top: 20px;
+  gap: 8px;
 }
 .img-click-text {
   display: flex;
@@ -2415,10 +2456,11 @@ font-weight: 400;
 line-height: 120%; /* 45.6px */
 }
 
-.what-interests-you-input {
+.what-interests-you-input,
+.what-s-your-ndustry-input {
   width: 100%;
   font-size: 24px;
-height: 178px;
+height: 50px;
 border-radius: 16px;
 background: #D4D0C2;
 border: 1px solid #000;
@@ -2433,14 +2475,14 @@ color: #000;
 font-size: 20px;
 width: 100%;
 resize: none;
-height: 246px;
 border-radius: 16px;
 background: #D4D0C2;
 border: 1px solid #000;
 }
 
 .input-form::placeholder {
-font-size: 20px;
+  font-family: "Cy-Grotesk";
+  font-size: 20px;
 }
 
 .your-info-input {
@@ -2473,11 +2515,16 @@ transition: all 0.3s ease;
 .select-form {
 flex-shrink: 0;
 border-radius: 16px;
+font-family: "Cy-Grotesk";
+font-size: 20px;
 border: 1px solid #000;
 padding: 12px 0;
 padding-left: 12px;
 padding-right: 12px;
 background-color: #D4D0C2;
+width: 215px;
+height: 64px;
+flex-shrink: 0;
 }
 
 .option-select {
@@ -2489,16 +2536,20 @@ font-weight: 400;
 line-height: 120%; /* 24px */
 }
 
+.textarea-form {
+  height: 140px;
+}
+
 @media screen and (min-width: 1512px) and (max-width: 1919px) {
 .form-menu {
-  height: 790px;
+  height: 770px;
   padding: 28px;
   gap: 0;
 }
 
 .form-button-send {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   right: 50px;
   top: 660px;
 }
@@ -2524,14 +2575,6 @@ line-height: 120%; /* 24px */
 }
 .form-label {
   gap: 8px;
-}
-.what-interests-you-input {
-  margin-bottom: 8px;
-}
-.input-form {
-  font-size: 20px;
-  line-height: normal;
-  height: 100px;
 }
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
@@ -2566,6 +2609,9 @@ line-height: 120%; /* 24px */
     border-radius: 0;
     gap: 12px;
   }
+  .form-label {
+    gap: 8px;
+  }
   .form-menu-header {
     display: flex;
     justify-content: space-between;
@@ -2580,9 +2626,16 @@ line-height: 120%; /* 24px */
     font-size: 29px;
   }
   .input-form {
-    height: 76%;
-    font-size: 18px;
-    padding: 8px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .input-form::placeholder {
+    font-size: 13px;
+  }
+  .what-interests-you-input,
+  .what-s-your-ndustry-input {
+    font-size: 13px;
+    height: 36px;
   }
   .title-label {
     font-size: 18px;
@@ -2590,11 +2643,21 @@ line-height: 120%; /* 24px */
   .your-info-input {
     margin-top: 12px;
   }
+  .select-form {
+    font-size: 13px;
+    padding: 0 12px;
+    width: 150px;
+    height: 41px;
+    flex-shrink: 0;
+  }
   .form-button-send {
     width: 103px;
     height: 103px;
     flex-shrink: 0;
     right: 34px;
     top : 552px;
+  }
+  .textarea-form {
+    height: 80px;
   }
 }

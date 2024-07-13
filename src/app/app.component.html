@@ -130,13 +130,13 @@
             (swiperDragMove)="onSwiperDragMove()"
           >
             <ng-template swiperSlide>
-              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-photos.png" alt="card-two-portfolio-photos"></div>
+              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio.png" alt="card-two-portfolio-photos"></div>
             </ng-template>
             <ng-template swiperSlide>
               <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-cards.png" alt="card-two-portfolio-cards"></div>
             </ng-template>
             <ng-template swiperSlide>
-              <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
+              <div class="swiper-slide"><img class="portfolio-card iphone-cards" src="../assets/portfolio/iphone-15-pro-on-white-background-v6-front-view-Recovered 1.png" alt="card-two-portfolio-phons"></div>
             </ng-template>
             <ng-template swiperSlide>
               <div class="swiper-slide"><img class="portfolio-card" src="../assets/portfolio/card-two-portfolio-phons.png" alt="card-two-portfolio-phons"></div>
@@ -224,12 +224,15 @@
           <div class="list-click-block">
             <div (click)="toggleForm()" class="img-click-block development-block">
               <p class="img-click-text">development</p>
+              <p class="development-text"><span>Front End</span> <span>Back End</span> <span>Mobile App</span></p>
             </div>
             <div (click)="toggleForm()" class="img-click-block design-block">
               <p class="img-click-text">design</p>
+              <p class="design-text"><span>Creative</span> <span>Brand</span> <span>UI/UX</span></p>
             </div>
             <div (click)="toggleForm()" class="img-click-block marketing-block">
               <p class="img-click-text">marketing</p>
+              <p class="marketing-text"><span>SMM Email</span> <span>Marketing</span> <span>Target</span></p>
             </div>
           </div>
           <div class="form-section">
@@ -277,12 +280,12 @@
     </div>
     <p class="form-title">Let` s get started </p>
     <label class="form-label" for="">
-      <p class="title-label">What interests you?</p>
-      <textarea placeholder="Type your text" class="what-interests-you-input input-form" type="text" ></textarea>
+      <p class="title-label">Your name</p>
+      <textarea placeholder="Your name" class="what-interests-you-input input-form" type="text" ></textarea>
     </label>
     <label class="form-label" for="">
-      <p class="title-label">What`s your industry?</p>
-      <textarea placeholder="Type your text" class="what-s-your-ndustry-input input-form" type="text"></textarea>
+      <p class="title-label">Your email</p>
+      <textarea placeholder="Your email" class="what-s-your-ndustry-input input-form" type="text"></textarea>
     </label>
     <label class="form-label select" for="">
       <p class="title-label ">What`s your budget?</p>
@@ -294,8 +297,8 @@
     </label>
 
     <label class="form-label your-info-input" for="">
-      <p class="title-label">Your info</p>
-      <textarea placeholder="Type your text" class="input-form" type="text" ></textarea>
+      <p class="title-label">Your project is about</p>
+      <textarea placeholder="Your project is about" class="input-form textarea-form" type="text" ></textarea>
     </label>
     <button class="form-button-send" type="submit">Send</button>
   </div>
