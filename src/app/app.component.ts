@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 import { MatterModule } from "./matter/matter.module";
-import { UserService } from './models/user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -46,17 +45,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private renderer: Renderer2,
+  // private http: HttpClient,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
-  }
-
-  registerUser() {
-    const userData = {
-      username: this.username,
-      email: this.email,
-      select: this.select,
-      project: this.project
-    };
   }
 
   ngOnInit() {
@@ -191,15 +182,44 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  toggleForm() {
-    if (this.isBrowser) {
-      this.isOpen = !this.isOpen;
-      if (this.isOpen) {
-        this.renderer.addClass(document.body, 'no-scroll');
-      } else {
-        this.renderer.removeClass(document.body, 'no-scroll');
-      }
-    }
+  toggleForm(): void {
+    this.isOpen = !this.isOpen;
   }
+
+  // FORM
+
+  registerUser(event: Event): void {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('name', this.username);
+    formData.append('email', this.email);
+    formData.append('select', this.select);
+    formData.append('project', this.project);
+
+    const postData = {
+      name: this.username,
+      email: this.email
+    };
+
+    // this.http.post('http://localhost:3000/syner/users', postData)
+    //   .subscribe(
+    //     (response: any) => {
+    //       alert('Користувач зареєстрований!');
+    //       this.resetForm();
+    //     },
+    //     (error: any) => {
+    //       alert('Сталася помилка: ' + error.message);
+    //     }
+    //   );
+  }
+
+  resetForm(): void {
+    this.username = '';
+    this.email = '';
+    this.select = '';
+    this.project = '';
+  }
+
 
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/Syner/users';
+  private apiUrl = 'http://localhost:3000/syner/users';
 
   constructor(private http: HttpClient) { }
 

@@ -270,7 +270,7 @@
   </main>
 </div>
 
-<form (ngSubmit)="registerUser()" class="form" [ngClass]="{'is-open': isOpen}">
+<form (ngSubmit)="registerUser($event)" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
     <div class="form-menu-header">
       <p class="form-menu-title">synertech</p>
@@ -290,7 +290,6 @@
     <label class="form-label select" for="budget">
       <p class="title-label">What's your budget?</p>
       <select id="budget" class="select-form" name="budget" [(ngModel)]="select" required>
-        <option value="Choose">Choose</option>
         <option value="from-500">From 500$</option>
         <option value="from-1000">From 1000$</option>
       </select>
