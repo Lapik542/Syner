@@ -3,17 +3,31 @@ import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLAT
 import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
-
 import { MatterModule } from "./matter/matter.module";
+import { UserService } from './models/user.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SwiperModule, NgClass, MatterModule],
+  imports: [
+    RouterOutlet,
+    SwiperModule,
+    NgClass,
+    MatterModule,
+    FormsModule,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
+
+  username: string = '';
+  email: string = '';
+  select: string = '';
+  project: string = '';
+
   setActiveSection(section: string) {
     this.currentSection = section;
     this.scrollToSection(section);
@@ -31,8 +45,18 @@ export class AppComponent implements OnInit, AfterViewInit {
   isOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-  private renderer: Renderer2) {
+  private renderer: Renderer2,
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  registerUser() {
+    const userData = {
+      username: this.username,
+      email: this.email,
+      select: this.select,
+      project: this.project
+    };
   }
 
   ngOnInit() {
@@ -177,4 +201,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     }
   }
+
 }

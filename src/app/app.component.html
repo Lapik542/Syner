@@ -270,7 +270,7 @@
   </main>
 </div>
 
-<form action="" class="form is-open" [ngClass]="{'is-open': isOpen}">
+<form (ngSubmit)="registerUser()" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
     <div class="form-menu-header">
       <p class="form-menu-title">synertech</p>
@@ -278,28 +278,28 @@
         <img class="form-menu-x" src="../assets/connect/x.png" alt="">
       </div>
     </div>
-    <p class="form-title">Let` s get started </p>
-    <label class="form-label" for="">
+    <p class="form-title">Let's get started</p>
+    <label class="form-label" for="username">
       <p class="title-label">Your name</p>
-      <textarea placeholder="Your name" class="what-interests-you-input input-form" type="text" ></textarea>
+      <input id="username" placeholder="Your name" class="what-interests-you-input input-form" type="text" [(ngModel)]="username" name="username" required>
     </label>
-    <label class="form-label" for="">
+    <label class="form-label" for="email">
       <p class="title-label">Your email</p>
-      <textarea placeholder="Your email" class="what-s-your-ndustry-input input-form" type="text"></textarea>
+      <input id="email" placeholder="Your email" class="what-s-your-ndustry-input input-form" type="email" [(ngModel)]="email" name="email" required>
     </label>
-    <label class="form-label select" for="">
-      <p class="title-label ">What`s your budget?</p>
-      <select class="select-form" name="pay-people">
-        <option class="option-select" value="Choose">Choose</option>
-        <option class="option-select" value="from-500">From 500$</option>
-        <option class="option-select" value="from-1000">From 1000$</option>
+    <label class="form-label select" for="budget">
+      <p class="title-label">What's your budget?</p>
+      <select id="budget" class="select-form" name="budget" [(ngModel)]="select" required>
+        <option value="Choose">Choose</option>
+        <option value="from-500">From 500$</option>
+        <option value="from-1000">From 1000$</option>
       </select>
     </label>
-
-    <label class="form-label your-info-input" for="">
+    <label class="form-label your-info-input" for="project">
       <p class="title-label">Your project is about</p>
-      <textarea placeholder="Your project is about" class="input-form textarea-form" type="text" ></textarea>
+      <textarea id="project" placeholder="Your project is about" class="input-form textarea-form" [(ngModel)]="project" name="project" required></textarea>
     </label>
     <button class="form-button-send" type="submit">Send</button>
   </div>
 </form>
+
