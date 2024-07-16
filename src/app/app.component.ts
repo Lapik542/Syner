@@ -6,6 +6,7 @@ import { SwiperModule } from 'swiper/angular';
 import { MatterModule } from "./matter/matter.module";
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { log } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -199,8 +200,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     const postData = {
       name: this.username,
-      email: this.email
+      email: this.email,
+      select: this.select,
+      project: this.project
     };
+
+    console.log(postData);
+
 
     // this.http.post('http://localhost:3000/syner/users', postData)
     //   .subscribe(
@@ -220,6 +226,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.select = '';
     this.project = '';
   }
-
 
 }
