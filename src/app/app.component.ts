@@ -1,5 +1,5 @@
 import { NgClass, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
@@ -29,9 +29,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   private aboutUsSection: HTMLElement | null = null;
   private aboutUsTexts: NodeListOf<HTMLElement> | null = null;
   isOpen = false;
-  renderer: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+  private renderer: Renderer2) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
