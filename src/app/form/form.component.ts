@@ -1,9 +1,20 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { error } from 'console';
+import { of, switchMap } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  // standalone: true,
+  // imports: [
+  //   FormsModule,
+  //   NgClass,
+  //   HttpClientModule
+  // ],
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
   username: string = '';
@@ -11,25 +22,42 @@ export class FormComponent {
   select: string = '';
   project: string = '';
 
-
   @Input() isOpen: boolean = false;
   @Output() toggle: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private http: HttpClient) {
+    this.http.post('http://localhost:3000', {}, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .pipe(
+      switchMap((response: any) => {
+        return of()
+      })
+    ).subscribe(
+        {
+          next: (response: any) => {
+            console.log('Відповідь сервера:', response);
+            alert('Користувач зареєстрований!');
+            this.resetForm();
+          },
+          error: error => {
+            console.error('Помилка:', error);
+            alert('Сталася помилка: ' + error.message);
+          }
+        }
+      );
+  }
 
   toggleForm() {
     this.isOpen = !this.isOpen;
     this.toggle.emit();
   }
 
-  // FORM
-
   registerUser(event: Event): void {
     event.preventDefault();
-
-    const formData = new FormData();
-    formData.append('name', this.username);
-    formData.append('email', this.email);
-    formData.append('select', this.select);
-    formData.append('project', this.project);
 
     const postData = {
       name: this.username,
@@ -38,19 +66,9 @@ export class FormComponent {
       project: this.project
     };
 
-    console.log(postData);
+    console.log('Дані, що надсилаються на сервер:', postData);
 
 
-    // this.http.post('http://localhost:3000/syner/users', postData)
-    //   .subscribe(
-    //     (response: any) => {
-    //       alert('Користувач зареєстрований!');
-    //       this.resetForm();
-    //     },
-    //     (error: any) => {
-    //       alert('Сталася помилка: ' + error.message);
-    //     }
-    //   );
   }
 
   resetForm(): void {

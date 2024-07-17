@@ -5,19 +5,18 @@ import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 import { MatterModule } from "./matter/matter.module";
 import { FormsModule } from '@angular/forms';
-import { FormModule } from './form/form.module';
+// import { FormModule } from './form/form.module';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    SwiperModule,
-    NgClass,
-    MatterModule,
-    FormsModule,
-    FormModule
-  ],
+  // imports: [
+  //   RouterOutlet,
+  //   SwiperModule,
+  //   NgClass,
+  //   MatterModule,
+  //   FormsModule,
+  //   FormModule
+  // ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
