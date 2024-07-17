@@ -1,22 +1,10 @@
-import { NgClass, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2, ChangeDetectorRef, NgZone } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2, NgZone } from '@angular/core';
 import { SwiperOptions, Swiper } from 'swiper';
-import { SwiperModule } from 'swiper/angular';
-import { MatterModule } from "./matter/matter.module";
-import { FormsModule } from '@angular/forms';
 // import { FormModule } from './form/form.module';
 
 @Component({
   selector: 'app-root',
-  // imports: [
-  //   RouterOutlet,
-  //   SwiperModule,
-  //   NgClass,
-  //   MatterModule,
-  //   FormsModule,
-  //   FormModule
-  // ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

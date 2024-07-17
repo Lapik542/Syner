@@ -10,7 +10,15 @@ import { FormsModule } from "@angular/forms";
 import { FormComponent } from "./form/form.component";
 
 @NgModule({
-  imports: [BrowserModule,NgClass,SwiperModule,RouterOutlet,MatterModule,FormsModule,HttpClientModule],
+  imports: [
+    BrowserModule,
+    NgClass,
+    SwiperModule,
+    RouterOutlet,
+    MatterModule,
+    FormsModule,
+    HttpClientModule
+  ],
   exports: [AppComponent,FormComponent],
   declarations: [AppComponent,FormComponent],
   providers: [],

@@ -1,19 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { error } from 'console';
+import { HttpClient } from '@angular/common/http';
 import { of, switchMap } from 'rxjs';
-import { NgClass } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  // standalone: true,
-  // imports: [
-  //   FormsModule,
-  //   NgClass,
-  //   HttpClientModule
-  // ],
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
