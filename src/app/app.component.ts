@@ -1,12 +1,11 @@
 import { NgClass, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2, ChangeDetectorRef, NgZone } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SwiperOptions, Swiper } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 import { MatterModule } from "./matter/matter.module";
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { log } from 'console';
+import { FormModule } from './form/form.module';
 
 @Component({
   selector: 'app-root',
@@ -17,16 +16,13 @@ import { log } from 'console';
     NgClass,
     MatterModule,
     FormsModule,
+    FormModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  username: string = '';
-  email: string = '';
-  select: string = '';
-  project: string = '';
 
   setActiveSection(section: string) {
     this.currentSection = section;
@@ -42,10 +38,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private aboutUsSection: HTMLElement | null = null;
   private aboutUsTexts: NodeListOf<HTMLElement> | null = null;
-  isOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private renderer: Renderer2,
+  private ngZone: NgZone
   // private http: HttpClient,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -183,48 +179,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  toggleForm(): void {
-    this.isOpen = !this.isOpen;
+  isOpen: boolean = false;
+
+  toggleForm() {
+    this.isOpen = !this.isOpen; // змінено на toggle значення
   }
-
-  // FORM
-
-  registerUser(event: Event): void {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.append('name', this.username);
-    formData.append('email', this.email);
-    formData.append('select', this.select);
-    formData.append('project', this.project);
-
-    const postData = {
-      name: this.username,
-      email: this.email,
-      select: this.select,
-      project: this.project
-    };
-
-    console.log(postData);
-
-
-    // this.http.post('http://localhost:3000/syner/users', postData)
-    //   .subscribe(
-    //     (response: any) => {
-    //       alert('Користувач зареєстрований!');
-    //       this.resetForm();
-    //     },
-    //     (error: any) => {
-    //       alert('Сталася помилка: ' + error.message);
-    //     }
-    //   );
-  }
-
-  resetForm(): void {
-    this.username = '';
-    this.email = '';
-    this.select = '';
-    this.project = '';
-  }
-
 }
