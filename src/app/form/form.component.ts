@@ -16,8 +16,26 @@ export class FormComponent {
   @Input() isOpen: boolean = false;
   @Output() toggle: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private http: HttpClient) {
-    this.http.post('http://localhost:3000', {}, {
+  constructor(private http: HttpClient) {}
+
+  toggleForm() {
+    this.isOpen = !this.isOpen;
+    this.toggle.emit();
+  }
+
+  registerUser(event: Event): void {
+    event.preventDefault();
+
+    const postData = {
+      name: this.username,
+      email: this.email,
+      select: this.select,
+      project: this.project
+    };
+
+    console.log('Дані, що надсилаються на сервер:', postData);
+
+    this.http.post('http://localhost:3000/syner/users', postData, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -40,26 +58,6 @@ export class FormComponent {
           }
         }
       );
-  }
-
-  toggleForm() {
-    this.isOpen = !this.isOpen;
-    this.toggle.emit();
-  }
-
-  registerUser(event: Event): void {
-    event.preventDefault();
-
-    const postData = {
-      name: this.username,
-      email: this.email,
-      select: this.select,
-      project: this.project
-    };
-
-    console.log('Дані, що надсилаються на сервер:', postData);
-
-
   }
 
   resetForm(): void {
