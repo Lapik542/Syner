@@ -79,7 +79,7 @@ margin-bottom: 16px;
 
 .title-label {
   color: #000;
-font-family: "Cy-Grotesk";
+font-family: "Nekst";
 font-size: 40px;
 font-style: normal;
 font-weight: 400;
@@ -99,7 +99,7 @@ margin-bottom: 24px;
 }
 
 .input-form {
-font-family: "Cy-Grotesk";
+font-family: "Nekst";
 padding: 10px 20px;
 color: #000;
 font-size: 20px;
@@ -145,7 +145,7 @@ transition: all 0.3s ease;
 .select-form {
 flex-shrink: 0;
 border-radius: 16px;
-font-family: "Cy-Grotesk";
+font-family: "Nekst";
 font-size: 20px;
 border: 1px solid #000;
 padding: 12px 0;
@@ -159,7 +159,7 @@ flex-shrink: 0;
 
 .option-select {
   color: rgba(0, 0, 0, 0.50);
-font-family: "Cy-Grotesk";
+font-family: "Nekst";
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
@@ -206,6 +206,42 @@ line-height: 120%; /* 24px */
 .form-label {
   gap: 8px;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  display: none; /* Початково ховаємо повідомлення про помилку */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.form-label {
+  position: relative;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
 
 @media screen and (min-width: 834px) and (max-width: 1511px) {
   .form-menu {

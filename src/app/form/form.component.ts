@@ -10,7 +10,7 @@ import { of, switchMap } from 'rxjs';
 export class FormComponent {
   username: string = '';
   email: string = '';
-  select: string = '';
+  select: string = 'from-500'; // Встановлення значення за замовчуванням
   project: string = '';
 
   @Input() isOpen: boolean = false;
@@ -35,7 +35,7 @@ export class FormComponent {
 
     console.log('Дані, що надсилаються на сервер:', postData);
 
-    this.http.post('http://localhost:3000/syner/users', postData, {
+    this.http.post<{ message: string }>('http://localhost:3000/syner/users', postData, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -43,27 +43,27 @@ export class FormComponent {
     })
     .pipe(
       switchMap((response: any) => {
-        return of()
+        return of(response);
       })
     ).subscribe(
-        {
-          next: (response: any) => {
-            console.log('Відповідь сервера:', response);
-            alert('Користувач зареєстрований!');
-            this.resetForm();
-          },
-          error: error => {
-            console.error('Помилка:', error);
-            alert('Сталася помилка: ' + error.message);
-          }
+      {
+        next: (response: any) => {
+          console.log('Відповідь сервера:', response);
+          alert(response.message);
+          this.resetForm(); // Очищення форми після успішної відправки
+        },
+        error: error => {
+          console.error('Помилка:', error);
+          alert('Сталася помилка: ' + error.message);
         }
-      );
+      }
+    );
   }
 
   resetForm(): void {
     this.username = '';
     this.email = '';
-    this.select = '';
+    this.select = 'from-500'; // Повернення значення за замовчуванням
     this.project = '';
   }
 }

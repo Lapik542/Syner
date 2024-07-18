@@ -17,7 +17,7 @@ import { FormComponent } from "./form/form.component";
     RouterOutlet,
     MatterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [AppComponent,FormComponent],
   declarations: [AppComponent,FormComponent],
