@@ -181,5 +181,5 @@ export class MatterComponent implements OnInit {
           el.style.userSelect = 'none';
           el.style.cursor = 'pointer';
       }
-      }
+    }
 }

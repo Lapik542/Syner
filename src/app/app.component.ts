@@ -1,7 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID, Renderer2, NgZone } from '@angular/core';
 import { SwiperOptions, Swiper } from 'swiper';
-// import { FormModule } from './form/form.module';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +28,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private renderer: Renderer2,
   private ngZone: NgZone
-  // private http: HttpClient,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
