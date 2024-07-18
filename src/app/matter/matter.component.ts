@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import Matter from 'matter-js';
 
 @Component({
@@ -12,8 +11,6 @@ export class MatterComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      document.addEventListener('DOMContentLoaded', () => {
         const Engine = Matter.Engine,
               Render = Matter.Render,
               Runner = Matter.Runner,
@@ -177,15 +174,12 @@ export class MatterComponent implements OnInit {
 
             Body.setPosition(body, { x: newX, y: newY });
         }
-      });
-
-      function setElementToAbsolute(el: HTMLElement, randomX: number, randomY: number) {
+        function setElementToAbsolute(el: HTMLElement, randomX: number, randomY: number) {
           el.style.position = 'absolute';
           el.style.left = `${randomX}px`;
           el.style.top = `${randomY}px`;
           el.style.userSelect = 'none';
           el.style.cursor = 'pointer';
       }
-    }
-  }
+      }
 }
