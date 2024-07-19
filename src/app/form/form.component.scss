@@ -207,42 +207,6 @@ line-height: 120%; /* 24px */
   gap: 8px;
 }
 
-.error-message {
-  color: red;
-  font-size: 0.8em;
-  margin-top: 0.5em;
-  display: none; /* Початково ховаємо повідомлення про помилку */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-.form-label {
-  position: relative;
-}
-
-.error-message {
-  position: absolute;
-  bottom: -1.5em;
-  left: 0;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-
-
-
 @media screen and (min-width: 834px) and (max-width: 1511px) {
   .form-menu {
     height: 100vh;
@@ -326,4 +290,15 @@ line-height: 120%; /* 24px */
   .textarea-form {
     height: 80px;
   }
+  .what-interests-you-input,
+  .what-s-your-ndustry-input {
+    margin-bottom: 0;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-family: Nekst;
+  margin-left: 12px;
 }

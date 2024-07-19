@@ -1,4 +1,4 @@
-<form (ngSubmit)="registerUser($event)" class="form" [ngClass]="{'is-open': isOpen}">
+<form #form="ngForm" (ngSubmit)="registerUser($event)" class="form" [ngClass]="{'is-open': isOpen}">
   <div class="form-menu">
     <div class="form-menu-header">
       <p class="form-menu-title">synertech</p>
@@ -9,23 +9,72 @@
     <p class="form-title">Let's get started</p>
     <label class="form-label" for="username">
       <p class="title-label">Your name</p>
-      <input id="username" placeholder="Your name" class="what-interests-you-input input-form" type="text" [(ngModel)]="username" name="username" required>
+      <input
+        id="username"
+        placeholder="Your name"
+        class="what-interests-you-input input-form"
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        required
+        #usernameField="ngModel"
+      >
+      <div *ngIf="usernameField.invalid && usernameField.touched" class="error">
+        Name is required.
+      </div>
     </label>
+
     <label class="form-label" for="email">
       <p class="title-label">Your email</p>
-      <input id="email" placeholder="Your email" class="what-s-your-ndustry-input input-form" type="email" [(ngModel)]="email" name="email" required>
+      <input
+        id="email"
+        placeholder="Your email"
+        class="what-s-your-ndustry-input input-form"
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+        #emailField="ngModel"
+      >
+      <div *ngIf="emailField.invalid && emailField.touched" class="error">
+        Valid email is required.
+      </div>
     </label>
+
     <label class="form-label select" for="budget">
       <p class="title-label">What's your budget?</p>
-      <select id="budget" class="select-form" name="budget" [(ngModel)]="select" required>
+      <select
+        id="budget"
+        class="select-form"
+        name="budget"
+        [(ngModel)]="select"
+        required
+        #budgetField="ngModel"
+      >
         <option value="from-500">From 500$</option>
         <option value="from-1000">From 1000$</option>
       </select>
+      <div *ngIf="budgetField.invalid && budgetField.touched" class="error">
+        Budget selection is required.
+      </div>
     </label>
+
     <label class="form-label your-info-input" for="project">
       <p class="title-label">Your project is about</p>
-      <textarea id="project" placeholder="Your project is about" class="input-form textarea-form" [(ngModel)]="project" name="project" required></textarea>
+      <textarea
+        id="project"
+        placeholder="Your project is about"
+        class="input-form textarea-form"
+        [(ngModel)]="project"
+        name="project"
+        required
+        #projectField="ngModel"
+      ></textarea>
+      <div *ngIf="projectField.invalid && projectField.touched" class="error">
+        Project description is required.
+      </div>
     </label>
-    <button class="form-button-send" type="submit">Send</button>
+
+    <button class="form-button-send" type="submit" [disabled]="form.invalid">Send</button>
   </div>
 </form>
